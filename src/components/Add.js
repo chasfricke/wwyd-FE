@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/Add.css"
 
 export class Add extends React.Component {
   render () {
@@ -20,3 +21,6 @@ export class Add extends React.Component {
     );
   }
 }
+
+
+
