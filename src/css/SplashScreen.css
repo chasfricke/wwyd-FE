@@ -1,0 +1,16 @@
+
+.instructions-container {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;  
+    /* align-items: center;   */
+    background-color: lightgray;
+    padding: 4rem;
+    margin: 1rem;
+    width: 80vw;
+}
+
+button {
+    align-self: center;
+}
