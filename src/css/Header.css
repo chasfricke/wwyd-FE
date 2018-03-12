@@ -1,0 +1,20 @@
+header {
+background-color: lightgray;    
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+.title {
+    display: flex;
+    align-content: flex-end;
+    flex-grow: 2; 
+    flex-direction: row; 
+    justify-content: center;
+}
+
+
+img {
+    width: 10vw;
+    height: 10vw;
+}
