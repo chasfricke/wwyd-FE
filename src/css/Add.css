@@ -5,20 +5,18 @@
 }
 
 form {
-    background-color: lightgray;    
     display: flex;
     flex-direction: column;
+    width: 60vw;
     align-items: center;
-    width: 80vw;
-    }
-    
+    background-color: lightgray;
+}
+
 label {
     margin-top: 1rem;
 }
 
 button {
     margin: 1rem;
+    width: 100px;
 }
-
-
- 
