@@ -8,7 +8,6 @@ import { Update } from './components/Update';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
-
 class App extends Component {
   constructor(props){
     super(props);
