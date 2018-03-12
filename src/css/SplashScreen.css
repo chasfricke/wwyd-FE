@@ -1,15 +1,18 @@
 
 .instructions-container {
-    align-self: center;
     display: flex;
     flex-direction: column;
     align-content: center;  
-    /* align-items: center;   */
+
     background-color: lightgray;
     padding: 4rem;
-    margin: 1rem;
-    width: 80vw;
+    margin: 1rem;   
 }
+
+h2 {
+    align-self: center;
+}
+
 
 button {
     align-self: center;
