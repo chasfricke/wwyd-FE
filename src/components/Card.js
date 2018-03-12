@@ -1,11 +1,33 @@
 import React from "react";
 
 export class Card extends React.Component {
-  render () {
+  constructor(props){
+    super(props);
+    this.createCard = this.createCard.bind(this);
+  }
+
+  createCard(item) {
     return (
-      <div>
-          <p>Card.js Component Goes Here...</p>
-      </div>
+      <li key={item.id}>
+        <div className="questionCard">
+          <h4 className="questionTitle">{item.title}</h4>
+          <p className="questionText">{item.question}</p>
+          <div className="response-buttons">
+            <button className="answer1">{item.answer1}</button>
+            <button className="answer2">{item.answer2}</button>
+          </div>
+        </div>
+      </li>
+    );
+  }
+
+  render() {
+    return (
+      <Card>
+        <ul className="questionList">
+          {this.props.questionsCard.map(this.createCard)}
+         </ul>
+      </Card>
     );
   }
 }

@@ -9,16 +9,39 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      questions: []
+    };
+  };
+
+  componentDidMount() {
+    this.getQuestions();
+  }
+
+  getQuestions = () => {
+    return fetch("https://wwydbackend.herokuapp.com/questions")
+    .then(response => response.json())
+    .then(questions => {
+      this.setState({ questions: questions });
+    });
+  }
+
+
+
+
+
   render() {
     return (
       <div className="App">
-      <Header />
-      <SplashScreen />
-      <Add />
-      <Card />
-      <Update />
-      <Contact />
-      <Footer />
+        <Header />
+        <SplashScreen />
+        <Add />
+        <Card questionsCard={this.state.questions} />
+        <Update />
+        <Contact />
+        <Footer />
       </div>
     );
   }
