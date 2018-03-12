@@ -1,10 +1,6 @@
 import React from "react";
 
-export class Card extends React.Component {
-  constructor(props){
-    super(props);
-    this.createCard = this.createCard.bind(this);
-  }
+export class Section extends React.Component {
 
   createCard(item) {
     return (
@@ -23,11 +19,11 @@ export class Card extends React.Component {
 
   render() {
     return (
-      <Card>
+      <section>
         <ul className="questionList">
           {this.props.questionsCard.map(this.createCard)}
          </ul>
-      </Card>
+      </section>
     );
   }
 }
