@@ -38,7 +38,7 @@ class App extends Component {
         <Header />
         <SplashScreen />
         <Add />
-        <Card questionsCard={this.state.questions} />
+        {/* <Card questionsCard={this.state.questions} /> */}
         <Update />
         <Contact />
         <Footer />
