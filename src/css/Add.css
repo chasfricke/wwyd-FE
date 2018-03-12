@@ -5,6 +5,7 @@
 }
 
 form {
+<<<<<<< HEAD
     background-color: lightgray;    
     display: flex;
     flex-direction: column;
@@ -12,13 +13,27 @@ form {
     width: 80vw;
     }
     
+=======
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    align-items: center;
+    background-color: lightgray;
+}
+
+>>>>>>> d8ce70ce96c1f6afbbf4949b510f4bfcf4fc6762
 label {
     margin-top: 1rem;
 }
 
 button {
     margin: 1rem;
+<<<<<<< HEAD
 }
 
 
  
+=======
+    width: 100px;
+}
+>>>>>>> d8ce70ce96c1f6afbbf4949b510f4bfcf4fc6762

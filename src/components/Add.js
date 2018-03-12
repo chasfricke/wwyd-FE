@@ -7,7 +7,7 @@ export class Add extends React.Component {
       <div className="form-container">
         
         <form className="song-form">
-        <h2>Add A Question... </h2>
+          <h2>Add A Question... </h2>
           <label htmlFor="title">Title: </label>
           <textarea name="title" rows="2" cols="50" id="title" placeholder="Do you take the pill?"></textarea>
           <label htmlFor="question">Question: </label>
