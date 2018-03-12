@@ -74,8 +74,8 @@ class App extends Component {
         <main>
           <SplashScreen />
           <Add />
-          <Section questionsCard={this.state.questions} />
           <Update />
+          <Section questionsCard={this.state.questions} />
           <Contact />
         </main>
         <Footer />
