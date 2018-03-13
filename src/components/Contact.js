@@ -17,7 +17,7 @@ export class Contact extends React.Component {
         </div>
         <div className="contact-info">
           <img src="https://media.licdn.com/dms/image/C5103AQF3_YNT5v1ZCA/profile-displayphoto-shrink_800_800/0?e=1526155200&v=alpha&t=3UoNYZrwHQPOtI8_nfuKKphq1QT_-JkKnIx1X5W5OZo" alt="logo" />
-          <p className="name">Nicholas Solimene</p>
+          <p className="name">Nicholas Solimine</p>
           <p className="title">Full Stack Developer</p>
           <div className="social">
             <p><a className="linked-in" href="https://www.linkedin.com/in/nsolimine/"><img src="./assets/linkedin.png" alt="icon" /></a></p>
