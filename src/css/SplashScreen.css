@@ -1,0 +1,19 @@
+
+.instructions-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;  
+
+    background-color: lightgray;
+    padding: 4rem;
+    margin: 1rem;   
+}
+
+h2 {
+    align-self: center;
+}
+
+
+button {
+    align-self: center;
+}
