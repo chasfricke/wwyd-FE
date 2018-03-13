@@ -1,26 +1,25 @@
 import React from 'react'
-import { Modal, Button } from "react-bootstrap";
-
+import { Modal, Button } from 'react-bootstrap'
 
 export class Section extends React.Component {
   constructor(props, context) {
-   super(props, context);
+    super(props, context)
 
-   this.handleShow = this.handleShow.bind(this);
-   this.handleClose = this.handleClose.bind(this);
+    this.handleShow = this.handleShow.bind(this)
+    this.handleClose = this.handleClose.bind(this)
 
-   this.state = {
-     show: false
-   };
- }
+    this.state = {
+      show: false
+    }
+  }
 
- handleClose() {
-   this.setState({ show: false });
- }
+  handleClose() {
+    this.setState({ show: false })
+  }
 
- handleShow() {
-   this.setState({ show: true });
- }
+  handleShow() {
+    this.setState({ show: true })
+  }
 
   createCard(item) {
     return (
@@ -32,9 +31,10 @@ export class Section extends React.Component {
             <button className="answer1">{item.answer1}</button>
             <button className="answer2">{item.answer2}</button>
           </div>
-          <div className>
-            <button className="Delete">Delete question</button>
+          <div className="Crud buttons">
+            <button className="delete">Delete question</button>
             <button className="update">Edit question</button>
+            <button className="next">Next question</button>
           </div>
         </div>
       </li>
@@ -45,24 +45,24 @@ export class Section extends React.Component {
     console.log(this.props.questionsCard)
     return (
       <div>
-      <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
           Play!
-       </Button>
+        </Button>
 
-      <Modal show={this.state.show} onHide={this.handleClose}>
-         <Modal.Header closeButton>
-           <Modal.Title>Update Your Question</Modal.Title>
-         </Modal.Header>
-         <Modal.Body>
-      <section>
-        <ul className="questionList">{this.props.questionsCard.map(this.createCard)}</ul>
-      </section>
-      </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={this.handleClose}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    </div>
+        <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Update Your Question</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <section>
+              <ul className="questionList">{this.props.questionsCard.map(this.createCard)}</ul>
+            </section>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.handleClose}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
     )
   }
 }
