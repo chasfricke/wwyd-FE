@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react'
 
 export class Section extends React.Component {
-
   createCard(item) {
     return (
       <li key={item.id}>
@@ -14,16 +13,15 @@ export class Section extends React.Component {
           </div>
         </div>
       </li>
-    );
+    )
   }
 
   render() {
+    console.log(this.props.questionsCard)
     return (
       <section>
-        <ul className="questionList">
-          {this.props.questionsCard.map(this.createCard)}
-         </ul>
+        <ul className="questionList">{this.props.questionsCard.map(this.createCard)}</ul>
       </section>
-    );
+    )
   }
 }

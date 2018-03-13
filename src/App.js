@@ -24,6 +24,7 @@ class App extends Component {
     return fetch('https://wwydbackend.herokuapp.com/questions')
       .then(response => response.json())
       .then(data => {
+        console.log(data.questions)
         this.setState({ questions: data.questions })
       })
   }
@@ -42,6 +43,7 @@ class App extends Component {
       response2: 0
     }
     this.addQuestion(question)
+    console.log(questions)
     this.setState({ questions })
   }
 
@@ -55,7 +57,8 @@ class App extends Component {
     })
       .then(res => res.json())
       .then(data => {
-        this.setState({ questions: data })
+        console.log(data)
+        this.getQuestions()
       })
       .catch(error => console.error('Error:', error))
   }
