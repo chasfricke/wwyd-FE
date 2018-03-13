@@ -39,7 +39,7 @@ export default function Form({ onSubmit }) {
           placeholder="Enter second answer option."
         />
         <button type="submit" value="Submit">
-          Submit
+         <h3>SUBMIT</h3> 
         </button>
       </form>
     </div>
