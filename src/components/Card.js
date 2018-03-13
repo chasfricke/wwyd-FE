@@ -9,19 +9,33 @@ export class Section extends React.Component {
     this.handleClose = this.handleClose.bind(this)
 
     this.state = {
-      show: false
+      show: undefined
     }
   }
 
-  handleClose() {
-    this.setState({ show: false })
+  handleClose = () => {
+    this.setState({ show: undefined })
   }
 
-  handleShow() {
-    this.setState({ show: true })
+  handleShow = () => {
+    console.log(this.state)
+    this.setState({
+      show: this.randomid()
+    })
   }
 
-  createCard(item) {
+  randomid = () => {
+    console.log(this.props.questionsCard)
+    let rindex = Math.floor(Math.random() * this.props.questionsCard.length)
+    return rindex
+  }
+
+  createCard(item, index) {
+    if (index === undefined) {
+      return
+    }
+    console.log(this.props.questionsCard)
+    var item = this.props.questionsCard[this.state.show]
     return (
       <li key={item.id}>
         <div className="questionCard">
@@ -40,7 +54,7 @@ export class Section extends React.Component {
   }
 
   render() {
-    console.log(this.props.questionsCard)
+    console.log(this.state)
     return (
       <div>
         <Button className="play-button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
@@ -53,7 +67,7 @@ export class Section extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <section>
-              <ul className="questionList">{this.props.questionsCard.map(this.createCard)}</ul>
+              <ul className="questionList">{this.createCard()}</ul>
             </section>
           </Modal.Body>
           <Modal.Footer>
