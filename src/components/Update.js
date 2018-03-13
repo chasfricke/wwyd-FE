@@ -25,9 +25,9 @@ export class Update extends React.Component {
   render () {
     return (
       <div>
-      <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-        Update Your Submission
-       </Button>
+      <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+        <h3>UPDATE SUBMISSION</h3>
+      </Button>
 
       <Modal show={this.state.show} onHide={this.handleClose}>
          <Modal.Header closeButton>
@@ -64,11 +64,11 @@ export class Update extends React.Component {
             id="answer_2"
             size="35"
           />
-          <button>Update</button>
+          <button><h3>UPDATE</h3></button>
         </form>
         </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.handleClose}>Close</Button>
+            <Button className="button" onClick={this.handleClose}><h3>CLOSE</h3></Button>
           </Modal.Footer>
         </Modal>
       </div>
