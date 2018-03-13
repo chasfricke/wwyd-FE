@@ -6,7 +6,7 @@ export class SplashScreen extends React.Component {
     return (
       <div >
 
-          <div className="instructions-container">
+          <div>
             <div className="title-div">
               <h2>HOW TO PLAY</h2>
             </div>
@@ -33,7 +33,6 @@ export class SplashScreen extends React.Component {
               <li>Want to improve a question?  Just click on the [add process here].</li>
               <li>Found an inappropriate question?  Delete it by [add process here].</li>
             </ul>
-            <button className="play-button"><h3>PLAY</h3></button>
           </div>
       </div>
     );
