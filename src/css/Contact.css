@@ -1,0 +1,8 @@
+.contact-parent {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-info {
+    margin: 3%;
+}
