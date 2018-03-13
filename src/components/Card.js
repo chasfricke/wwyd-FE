@@ -31,11 +31,9 @@ export class Section extends React.Component {
             <button className="answer1">{item.answer1}</button>
             <button className="answer2">{item.answer2}</button>
           </div>
-          <div className="Crud buttons">
-            <button className="delete">Delete question</button>
-            <button className="update">Edit question</button>
-            <button className="next">Next question</button>
-          </div>
+          <Button bsStyle="primary" bsSize="large">
+            Next!
+          </Button>
         </div>
       </li>
     )
@@ -45,13 +43,13 @@ export class Section extends React.Component {
     console.log(this.props.questionsCard)
     return (
       <div>
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+        <Button className="play-button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
           Play!
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Update Your Question</Modal.Title>
+            <Modal.Title />
           </Modal.Header>
           <Modal.Body>
             <section>

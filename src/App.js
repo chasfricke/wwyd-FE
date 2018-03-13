@@ -77,10 +77,12 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
+        <div className="instructions-container">
           <SplashScreen />
+          <Section questionsCard={this.state.questions} />
+        </div>
           <Add onSubmit={this.onSubmit} />
           <Update />
-          <Section questionsCard={this.state.questions} />
           <Contact />
         </main>
         <Footer />
