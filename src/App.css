@@ -45,24 +45,23 @@ table {
 /* End of Myers Reset */
 
 body {
-    /* background-image: url("./images/background.jpg");
-    background-size:100%;    */
-    background-color: darkslateblue;
+    background-color: #303742;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
+    color: #C6C6B8;
 }
 
 h3 {
@@ -70,6 +69,7 @@ h3 {
     font-weight: bold;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    color: #C6C6B8;
 }
 h4 {
     font-size: 18px;
@@ -81,7 +81,7 @@ h4 {
 p {
     font-size: 18px;
     padding: 0.5rem;
-    color: black;
+    color:black;
 }
 
 ul {
