@@ -6,3 +6,8 @@
 .contact-info {
     margin: 3%;
 }
+
+.social{
+    display: flex;
+    flex-direction: row
+}
