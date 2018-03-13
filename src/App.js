@@ -39,8 +39,8 @@ class App extends Component {
       question: data.get('question'),
       answer1: data.get('answer1'),
       answer2: data.get('answer2'),
-      response1: 0,
-      response2: 0
+      response1: 1,
+      response2: 1
     }
     this.addQuestion(question)
     console.log(questions)
