@@ -31,8 +31,8 @@ export class Section extends React.Component {
             <button className="answer1">{item.answer1}</button>
             <button className="answer2">{item.answer2}</button>
           </div>
-          <Button bsStyle="primary" bsSize="large">
-            Next!
+          <Button className="button" bsStyle="primary" bsSize="large">
+            <h3>NEXT</h3>
           </Button>
         </div>
       </li>
@@ -44,7 +44,7 @@ export class Section extends React.Component {
     return (
       <div>
         <Button className="play-button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          Play!
+          <h3>PLAY</h3>
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
@@ -57,7 +57,9 @@ export class Section extends React.Component {
             </section>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.handleClose}>Close</Button>
+            <Button onClick={this.handleClose}>
+              <h3>CLOSE</h3>
+            </Button>
           </Modal.Footer>
         </Modal>
       </div>
