@@ -8,8 +8,7 @@
     margin: 3%;
     background: linear-gradient(to bottom right, #627187, #303742);
     opacity: 0.8;
-    /* border-radius: 25px 25px 25px 25px; uncomment when hover state matches*/ 
-    box-shadow: 0px 10px 10px black;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,4 +28,5 @@ img {
 
 .contact-info:hover * {
     background: #9867D5;
+    border-radius: 25px 25px 25px 25px;
 }
