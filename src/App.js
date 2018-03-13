@@ -6,7 +6,6 @@ import Add from './components/AddForm'
 import { Section } from './components/Card'
 import { Update } from './components/Update'
 import { Contact } from './components/Contact'
-import { Footer } from './components/Footer'
 
 class App extends Component {
   constructor(props) {
@@ -77,6 +76,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
+        <div className="title-div">
+          <h2>HOW TO PLAY</h2>
+        </div>
         <div className="instructions-container">
           <SplashScreen />
           <Section questionsCard={this.state.questions} />
@@ -85,7 +87,6 @@ class App extends Component {
           <Update />
           <Contact />
         </main>
-        <Footer />
       </div>
     )
   }
