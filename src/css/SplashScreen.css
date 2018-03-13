@@ -1,18 +1,35 @@
+.title-div {
+    background-color: white;
+    opacity: 0.45; 
+    margin-right: 2rem; 
+    margin-left: 2rem;
+    border-radius:  25px 25px 0px 0px;
+    padding-left: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  
+}
 
 .instructions-container {
     display: flex;
     flex-direction: column;
-    align-content: center;  
-
-    background-color: lightgray;
-    padding: 4rem;
-    margin: 1rem;   
+    /* align-content: center;  */
+    background-color:white;
+    opacity: 0.6; 
+    border-radius: 0px 0px 25px 25px;
+    padding: 1rem;
+    margin-right: 2rem; 
+    margin-left: 2rem;   
+  
 }
 
 h2 {
     align-self: center;
+    color: black;
 }
-
 
 button {
     align-self: center;
