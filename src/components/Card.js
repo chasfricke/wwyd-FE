@@ -11,7 +11,10 @@ export class Section extends React.Component {
             <button className="answer1">{item.answer1}</button>
             <button className="answer2">{item.answer2}</button>
           </div>
-          <div className> 
+          <div className>
+            <button className="Delete">Delete question</button>
+            <button className="update">Edit question</button>
+          </div>
         </div>
       </li>
     )
