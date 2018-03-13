@@ -5,7 +5,7 @@ export class SplashScreen extends React.Component {
   render () {
     return (
       <div >
-          
+
           <div className="instructions-container">
             <div className="title-div">
               <h2>HOW TO PLAY</h2>
