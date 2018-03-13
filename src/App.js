@@ -6,7 +6,6 @@ import Add from './components/AddForm'
 import { Section } from './components/Card'
 import { Update } from './components/Update'
 import { Contact } from './components/Contact'
-import { Footer } from './components/Footer'
 
 class App extends Component {
   constructor(props) {
@@ -39,8 +38,8 @@ class App extends Component {
       question: data.get('question'),
       answer1: data.get('answer1'),
       answer2: data.get('answer2'),
-      response1: 0,
-      response2: 0
+      response1: 1,
+      response2: 1
     }
     this.addQuestion(question)
     console.log(questions)
@@ -77,13 +76,17 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
+        <div className="title-div">
+          <h2>HOW TO PLAY</h2>
+        </div>
+        <div className="instructions-container">
           <SplashScreen />
+          <Section questionsCard={this.state.questions} />
+        </div>
           <Add onSubmit={this.onSubmit} />
           <Update />
-          <Section questionsCard={this.state.questions} />
           <Contact />
         </main>
-        <Footer />
       </div>
     )
   }
