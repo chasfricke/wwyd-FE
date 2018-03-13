@@ -10,18 +10,18 @@ export class Contact extends React.Component {
           <p className="name">Ross Prehn</p>
           <p className="title">Full Stack Developer</p>
           <div className="social">
-            <p><a className="linked-in" href="https://www.linkedin.com/in/rossprehn/"><img src="./assets/linkedin.png" alt="icon"/></a></p>
-            <p><a className="github" href="https://github.com/rossprehn"><img src="./assets/github.png" alt="icon" /></a></p>
+            <p><a className="linked-in" href="https://www.linkedin.com/in/rossprehn/" target="_blank"><img src="./assets/linkedin.png" alt="icon"/></a></p>
+            <p><a className="github" href="https://github.com/rossprehn" target="_blank"><img src="./assets/github.png" alt="icon" /></a></p>
             <p><a className="email" href="mailto: johnross.prehn@gmail.com"><img src="./assets/email.png" alt="icon" /></a></p>
           </div>
         </div>
         <div className="contact-info">
           <img src="https://media.licdn.com/dms/image/C5103AQF3_YNT5v1ZCA/profile-displayphoto-shrink_800_800/0?e=1526155200&v=alpha&t=3UoNYZrwHQPOtI8_nfuKKphq1QT_-JkKnIx1X5W5OZo" alt="logo" />
-          <p className="name">Nicholas Solimene</p>
+          <p className="name">Nicholas Solimine</p>
           <p className="title">Full Stack Developer</p>
           <div className="social">
-            <p><a className="linked-in" href="https://www.linkedin.com/in/nsolimine/"><img src="./assets/linkedin.png" alt="icon" /></a></p>
-            <p><a className="github" href="https://github.com/nsolimine"><img src="./assets/github.png" alt="icon" /></a></p>
+            <p><a className="linked-in" href="https://www.linkedin.com/in/nsolimine/" target="_blank"><img src="./assets/linkedin.png" alt="icon" /></a></p>
+            <p><a className="github" href="https://github.com/nsolimine" target="_blank"><img src="./assets/github.png" alt="icon" /></a></p>
             <p><a className="email" href="mailto: nick.solimine1@gmail.com"><img src="./assets/email.png" alt="icon" /></a></p>
           </div>
         </div>
@@ -30,8 +30,8 @@ export class Contact extends React.Component {
           <p className="name">Chas Fricke</p>
           <p className="title">Full Stack Developer</p>
           <div className="social">
-            <p><a className="linked-in" href="https://www.linkedin.com/in/chas-fricke/"><img src="./assets/linkedin.png" alt="icon" /></a></p>
-            <p><a className="github" href="https://github.com/chasfricke"><img src="./assets/github.png" alt="icon" /></a></p>
+            <p><a className="linked-in" href="https://www.linkedin.com/in/chas-fricke/" target="_blank"><img src="./assets/linkedin.png" alt="icon" /></a></p>
+            <p><a className="github" href="https://github.com/chasfricke" target="_blank"><img src="./assets/github.png" alt="icon" /></a></p>
             <p><a className="email" href="mailto: frickec@gmail.com"><img src="./assets/email.png" alt="icon" /></a></p>
           </div>
         </div>
@@ -40,8 +40,8 @@ export class Contact extends React.Component {
           <p className="name">Malcolm Foster</p>
           <p className="title">Full Stack Developer</p>
           <div className="social">
-            <p><a className="linked-in" href="https://github.com/mfoster1989"><img src="./assets/linkedin.png" alt="icon" /></a></p>
-            <p><a className="github" href="https://www.linkedin.com/in/mfoster1989"><img src="./assets/github.png" alt="icon" /></a></p>
+            <p><a className="linked-in" href="https://github.com/mfoster1989" target="_blank"><img src="./assets/linkedin.png" alt="icon" /></a></p>
+            <p><a className="github" href="https://www.linkedin.com/in/mfoster1989" target="_blank"><img src="./assets/github.png" alt="icon" /></a></p>
             <p><a className="email" href="mailto: abc@example.com"><img src="./assets/email.png" alt="icon" /></a></p>
           </div>
         </div>
