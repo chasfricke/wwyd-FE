@@ -43,45 +43,65 @@ table {
 }
 
 /* End of Myers Reset */
+@font-face {
+    font-family: Melbourne_bold;
+    src: url(./css/fonts/Melbourne_bold.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Thin;
+    src: url(./css/fonts/Raleway-Thin.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url(./css/fonts/OpenSans-Regular.ttf);
+}
 
 body {
     background-color: #303742;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
 }
 
 h1 {
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 50px;
+    font-weight: bolder;
     margin-top: 1rem;
     margin-bottom: 1rem;
+   
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
     color: #C6C6B8;
+    font-family: Raleway-Thin;
+
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     color: #C6C6B8;
+    font-family: Raleway-Thin;
 }
 h4 {
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    font-family: Raleway-Thin;
 }
 
 p {
-    font-size: 18px;
+    font-size: 21px;
+    line-height: 1.4;
     padding: 0.5rem;
-    color:black;
+    color:#101010;
+    font-family: OpenSans-Regular;
 }
 
 ul {
@@ -92,5 +112,8 @@ ul {
 
 li {
     padding-bottom: .25rem;
-    font-size: 18px;
+    font-size: 21px;
+    line-height: 1.4;
+    font-family: OpenSans-Regular;
+    color:#101010;
 }
