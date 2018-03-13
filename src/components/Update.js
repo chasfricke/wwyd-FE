@@ -1,10 +1,39 @@
 import React from "react";
 import "../css/Update.css";
+import { Modal, Button } from "react-bootstrap";
 
 export class Update extends React.Component {
+  constructor(props, context) {
+   super(props, context);
+
+   this.handleShow = this.handleShow.bind(this);
+   this.handleClose = this.handleClose.bind(this);
+
+   this.state = {
+     show: false
+   };
+ }
+
+ handleClose() {
+   this.setState({ show: false });
+ }
+
+ handleShow() {
+   this.setState({ show: true });
+ }
+
   render () {
     return (
-      <div className="form-container">
+      <div>
+      <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+        Update Your Submission
+       </Button>
+
+      <Modal show={this.state.show} onHide={this.handleClose}>
+         <Modal.Header closeButton>
+           <Modal.Title>Update Your Question</Modal.Title>
+         </Modal.Header>
+         <Modal.Body>
         <form>
           <h2>Update A Question...</h2>
           <label htmlFor="title">Title: </label>
@@ -37,6 +66,11 @@ export class Update extends React.Component {
           />
           <button>Update</button>
         </form>
+        </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.handleClose}>Close</Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }
