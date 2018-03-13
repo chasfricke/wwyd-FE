@@ -28,6 +28,9 @@ export class Section extends React.Component {
         <div className="questionCard">
           <h4 className="questionTitle">{item.title}</h4>
           <p className="questionText">{item.question}</p>
+          <Button bsStyle="primary" bsSize="large">
+          Next!
+          </Button>
           <div className="response-buttons">
             <button className="answer1">{item.answer1}</button>
             <button className="answer2">{item.answer2}</button>
