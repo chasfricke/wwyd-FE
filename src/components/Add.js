@@ -13,7 +13,7 @@ export class Add extends React.Component {
             rows="2"
             cols="50"
             id="title"
-            placeholder="Do you take the pill?"
+            placeholder="Enter title for your question"
           />
           <label htmlFor="question">Question: </label>
           <textarea
