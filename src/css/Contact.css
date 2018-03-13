@@ -1,8 +1,31 @@
 .contact-parent {
     display: flex;
     flex-direction: row;
+    width: 100vw;
 }
 
 .contact-info {
     margin: 3%;
+    background: linear-gradient(to bottom right, #627187, #303742);
+    opacity: 0.8;
+    border-radius: 25px 25px 25px 25px;
+    padding: 1rem;
+    margin-right: 2rem; 
+    margin-left: 2rem;   
+    box-shadow: 0px 10px 10px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.social{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }

@@ -27,24 +27,3 @@ h2 {
     align-self: center;
 }
 
-
-/* .play-button {
-    width: 200px;
-    align-self: center;
-    padding: 5px 25px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    background-color:  #ED4071;
-    border-radius: 10px;
-    border:none;
-    box-shadow: 0px 5px 10px black;
-  }
-  
-  .play-button:hover {background-color: #A12B4D}
-  
-  .play-button:active {
-    background-color: #731F37;  
-    transform: translateY(4px);
-  } */
