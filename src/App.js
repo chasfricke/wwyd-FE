@@ -56,7 +56,8 @@ class App extends Component {
     }
     this.addQuestion(question)
     this.setState({ questions })
-    event.target.reset()
+    event.target.reset();
+    this.setState({ show: false })
   }
 
   addQuestion = question => {
@@ -73,15 +74,6 @@ class App extends Component {
       })
       .catch(error => console.error('Error:', error))
   }
-
-  // deleteQuestion = id => {
-  //   console.log('delete question', id, this.state)
-  //   return fetch('https://wwydbackend.herokuapp.com/questions/' + id, { method: 'DELETE' })
-  //     .then(response => response.text())
-  //     .then(response => {})
-  //     .then(this.data)
-  //     .catch(error => console.error)
-  // }
 
   render() {
     return (
