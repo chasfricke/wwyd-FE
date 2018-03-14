@@ -122,7 +122,7 @@ li {
     color:#101010;
 }
 
-button, 
+button,
 .play-button,
 .button {
     align-self: center;
@@ -132,19 +132,23 @@ button,
     text-align: center;
     text-decoration: none;
     outline: none;
-    background-color:  #ED4071;
+    background-color:  rgb(255, 0, 40);
     border-radius: 10px;
     border:none;
     box-shadow: 0px 5px 10px black;
   }
-  
-  button:hover, 
+
+  button:hover,
   .play-button:hover,
-  .button:hover {background-color: #A12B4D}
-  
-  button:active, 
+  .button:hover {background-color: rgb(190, 4, 56)}
+
+  button:active,
   .play-button:active,
   .button:active {
-    background-color: #731F37;  
+    background-color: rgb(128, 3, 37);
     transform: translateY(4px);
   }
+
+	ul li {
+		list-style-type: none;
+	}

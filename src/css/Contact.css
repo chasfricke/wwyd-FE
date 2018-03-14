@@ -9,9 +9,6 @@
     background: linear-gradient(to bottom right, #627187, #303742);
     opacity: 0.8;
     border-radius: 25px 25px 25px 25px;
-    padding: 1rem;
-    margin-right: 2rem; 
-    margin-left: 2rem;   
     box-shadow: 0px 10px 10px black;
     display: flex;
     flex-direction: column;
@@ -28,4 +25,31 @@
 img {
     width: 100%;
     height: auto;
+}
+
+/* .contact-info:hover * {
+    background: #9867D5;
+    width: 105%;
+}
+
+.social-icon:hover * {
+    width: 105%;
+    height: auto;   
+} */
+
+.spacer {
+    width: 100vw;
+    height: 200rem;
+}
+
+.name {
+    font-size: 20px;
+    font: inherit;
+    text-align: center;
+}
+
+.title {
+    font-size: 15px;
+    font: inherit;
+    text-align: center;
 }

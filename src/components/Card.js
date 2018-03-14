@@ -10,7 +10,11 @@ export class Section extends React.Component {
     this.deleteQuestion = this.deleteQuestion.bind(this)
 
     this.state = {
-      show: undefined
+      show: undefined,
+      title: undefined,
+      question: undefined,
+      answer1: undefined,
+      answer2: undefined
     }
   }
   deleteQuestion = event => {
@@ -50,33 +54,44 @@ export class Section extends React.Component {
     this.setState({ show: undefined })
   }
 
-  handleShow = () => {
-    console.log(this.state)
+  handleShow = e => {
+    e.preventDefault()
     this.setState({
-      show: this.randomid()
+      show: this.getRandomCard()
     })
   }
 
-  randomid = () => {
-    console.log(this.props.questionsCard)
+  getRandomCard = () => {
     let rindex = Math.floor(Math.random() * this.props.questionsCard.length)
-    return rindex
+    return this.props.questionsCard[rindex - 1]
   }
 
-  createCard() {
-    console.log(this.state)
-    var item = this.props.questionsCard[this.state.show]
-    console.log(this.props.questionsCard)
+  createCard(randomCard, index) {
+    var randomCard = this.props.questionsCard[this.state.show - 1]
+
+    if (!this.state.show) {
+      return null
+    }
+
+    const { show } = this.state
+
     return (
-      <li>
+      <li key={show.id}>
         <div className="questionCard">
-          <h4 className="questionTitle">{item.title}</h4>
-          <p className="questionText">{item.question}</p>
+          <h4 className="questionTitle">{show.title}</h4>
+          <p className="questionText">{show.question}</p>
           <div className="response-buttons">
-            <button className="answer1">{item.answer1}</button>
-            <button className="answer2">{item.answer2}</button>
+            <button className="answer1">{show.answer1}</button>
+            <button className="answer2">{show.answer2}</button>
           </div>
-          <Button className="button" bsStyle="primary" bsSize="large">
+          <Button
+            className="button"
+            bsStyle="primary"
+            bsSize="large"
+            onClick={e => {
+              this.handleShow(e)
+            }}
+          >
             <h3>NEXT</h3>
           </Button>
         </div>
@@ -85,15 +100,22 @@ export class Section extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.show)
     return (
       <div>
-        <Button className="play-button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+        <Button
+          className="play-button"
+          bsStyle="primary"
+          bsSize="large"
+          onClick={e => {
+            this.handleShow(e)
+          }}
+        >
           <h3>PLAY</h3>
         </Button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title />
+            <Modal.Title>{this.state.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <section>

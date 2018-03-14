@@ -6,13 +6,27 @@ import Add from './components/AddForm'
 import { Section } from './components/Card'
 import { Update } from './components/Update'
 import { Contact } from './components/Contact'
+import { Modal, Button } from 'react-bootstrap'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
+  constructor(props, context) {
+    super(props, context)
+
+    this.handleShow = this.handleShow.bind(this)
+    this.handleClose = this.handleClose.bind(this)
+
     this.state = {
-      questions: []
+      questions: [],
+      show: false
     }
+  }
+
+  handleClose() {
+    this.setState({ show: false })
+  }
+
+  handleShow() {
+    this.setState({ show: true })
   }
 
   componentDidMount() {
@@ -42,6 +56,7 @@ class App extends Component {
     }
     this.addQuestion(question)
     this.setState({ questions })
+    event.target.reset()
   }
 
   addQuestion = question => {
@@ -76,8 +91,28 @@ class App extends Component {
           <div className="title-div">
             <h2>HOW TO PLAY</h2>
           </div>
-
-          <Add onSubmit={this.onSubmit} />
+          <div className="instructions-container">
+            <SplashScreen />
+            <Section questionsCard={this.state.questions} />
+          </div>
+          <div>
+            <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+              <h3>ADD SUBMISSION</h3>
+            </Button>
+            <Modal show={this.state.show} onHide={this.handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>Update Your Question</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Add onSubmit={this.onSubmit} />
+              </Modal.Body>
+              <Modal.Footer>
+                <Button className="button" onClick={this.handleClose}>
+                  <h3>CLOSE</h3>
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </div>
           <Update />
           <Contact />
         </main>
