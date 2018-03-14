@@ -122,7 +122,7 @@ li {
     color:#101010;
 }
 
-button, 
+button,
 .play-button,
 .button {
     align-self: center;
@@ -137,14 +137,18 @@ button,
     border:none;
     box-shadow: 0px 5px 10px black;
   }
-  
-  button:hover, 
+
+  button:hover,
   .play-button:hover,
   .button:hover {background-color: rgb(190, 4, 56)}
-  
-  button:active, 
+
+  button:active,
   .play-button:active,
   .button:active {
-    background-color: rgb(128, 3, 37);  
+    background-color: rgb(128, 3, 37);
     transform: translateY(4px);
   }
+
+	ul li {
+		list-style-type: none;
+	}
