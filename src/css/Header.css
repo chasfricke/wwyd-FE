@@ -3,6 +3,9 @@ header {
 display: flex;
 flex-direction: row;
 align-items: center;
+justify-content: space-between;
+margin-left: 2rem;
+margin-right: 2rem;
 }
 
 .title {
@@ -17,5 +20,22 @@ align-items: center;
 .header-image {
     width: 10vw;
     height: 10vw;
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+}
+
+.header-title {
+    width: 60vw;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    
+}
+
+.hamburger-button {
+    width: 8vw;
+    height: 8vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }

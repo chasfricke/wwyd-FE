@@ -11,34 +11,33 @@ export class Contact extends React.Component {
     }
   }
 
-  setStuff = () => {
 
-  }
  
-  growCard = (event) => 
-  
-  
+  growCard = (event) => {  
+    var target = event.currentTarget.id
+    console.log(target);
 
-{  var target = event.currentTarget.id
-console.log(target);
+    anime({
+      targets: "#" + target,
+      scale: 1.1
+    })
+  }
 
-  anime({
-    targets: target,
-    scale: 1.2,
-    backgroundColor: "#9867D5",
-  });}
+  shrinkCard = (event) => {  
+    var target = event.currentTarget.id
+    console.log(target);
 
-  // resetCard = () => anime({
-  //   targets: {this.state.id},
-  //   scale: 1,
-  //   backgroundColor: "#9867D5",
-  // });
+    anime({
+      targets: "#" + target,
+      scale: 1.0
+    })
+  }
 
   render() {
     return (
       <div>
         <div className="contact-parent">
-          <div id="ross" className="contact-info" onMouseOver={this.growCard}>
+          <div id="ross" className="contact-info" onMouseEnter={this.growCard} onMouseLeave={this.shrinkCard>
             <img id="NOPE" className="headshot" src="https://media.licdn.com/dms/image/C4D03AQHDCO3YWK2JAg/profile-displayphoto-shrink_800_800/0?e=1526158800&v=alpha&t=PocEOX63avPI3o9UWU562TeZJaQ1hQ3FSsnQUUMzFTg" alt="logo" />
             <p className="name">Ross Prehn</p>
             <p className="title">Full Stack Developer</p>
