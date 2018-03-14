@@ -30,14 +30,12 @@ export class Section extends React.Component {
     return rindex
   }
 
-  createCard(item, index) {
-    if (index === undefined) {
-      return
-    }
-    console.log(this.props.questionsCard)
+  createCard() {
+    console.log(this.state)
     var item = this.props.questionsCard[this.state.show]
+    console.log(this.props.questionsCard)
     return (
-      <li key={item.id}>
+      <li>
         <div className="questionCard">
           <h4 className="questionTitle">{item.title}</h4>
           <p className="questionText">{item.question}</p>
@@ -60,7 +58,6 @@ export class Section extends React.Component {
         <Button className="play-button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
           <h3>PLAY</h3>
         </Button>
-
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title />

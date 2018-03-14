@@ -23,7 +23,6 @@ class App extends Component {
     return fetch('https://wwydbackend.herokuapp.com/questions')
       .then(response => response.json())
       .then(data => {
-        console.log(data.questions)
         this.setState({ questions: data.questions })
       })
   }
@@ -42,7 +41,6 @@ class App extends Component {
       response2: 1
     }
     this.addQuestion(question)
-    console.log(questions)
     this.setState({ questions })
   }
 
@@ -56,7 +54,6 @@ class App extends Component {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         this.getQuestions()
       })
       .catch(error => console.error('Error:', error))
@@ -76,13 +73,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-        <div className="title-div">
-          <h2>HOW TO PLAY</h2>
-        </div>
-        <div className="instructions-container">
-          <SplashScreen />
-          <Section questionsCard={this.state.questions} />
-        </div>
+          <div className="title-div">
+            <h2>HOW TO PLAY</h2>
+          </div>
+          <div className="instructions-container">
+            <SplashScreen />
+            <Section questionsCard={this.state.questions} />
+          </div>
           <Add onSubmit={this.onSubmit} />
           <Update />
           <Contact />
