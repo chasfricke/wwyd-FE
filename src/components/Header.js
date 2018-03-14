@@ -5,7 +5,7 @@ export class Header extends React.Component {
   render () {
     return (
       <header>
-        <img className="header-image" src="https://www.techonline.com/img/tmp/logo-placeholder.png" alt="logo" />
+        <img className="header-image" src="./assets/logo.png" alt="logo" />
       </header>
     );
   }
