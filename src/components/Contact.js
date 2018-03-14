@@ -48,7 +48,7 @@ export class Contact extends React.Component {
               <p className="social-icon"><a className="email" href="mailto: nick.solimine1@gmail.com"><img className="social-icon" src="./assets/email.png" alt="icon" /></a></p>
             </div>
           </div>
-          <div id="chas" className="contact-info" onMouseOver={this.animateChas}>
+          <div id="chas" className="contact-info" onMouseOver={this.growCard} onMouseLeave={this.shrinkCard}>
             <img className="headshot" src="https://media.licdn.com/dms/image/C4E03AQGrtF_lUOnueA/profile-displayphoto-shrink_800_800/0?e=1526158800&v=alpha&t=uoxMVmUqxdOErZZwNnLAh6fKtmA7VgVjk94o3Nbl1Ng" alt="logo" />
             <p className="name">Chas Fricke</p>
             <p className="title">Full Stack Developer</p>
@@ -58,7 +58,7 @@ export class Contact extends React.Component {
               <p className="social-icon"><a className="email" href="mailto: frickec@gmail.com"><img className="social-icon" src="./assets/email.png" alt="icon" /></a></p>
             </div>
           </div>
-          <div id="malcolm" className="contact-info" onMouseOver={this.animateMalcolm}>
+          <div id="malcolm" className="contact-info" onMouseOver={this.growCard} onMouseLeave={this.shrinkCard}>
             <img className="headshot" src="https://media.licdn.com/media/AAEAAQAAAAAAAArNAAAAJGI1M2FiNDg3LWY5NWEtNGZkNC05MTkxLWUzZjBjYjgyZDQ4Mw.jpg" alt="logo" />
             <p className="name">Malcolm Foster</p>
             <p className="title">Full Stack Developer</p>
