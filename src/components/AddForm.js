@@ -22,19 +22,19 @@ export default function Form({ onSubmit }) {
           id="question"
           placeholder="Enter question here."
         />
-        <label htmlFor="answer1">Answer #1: </label>
+        <label htmlFor="answer_1">Answer #1: </label>
         <input
           type="text"
-          name="answer1"
-          id="answer1"
+          name="answer_1"
+          id="answer_1"
           size="35"
           placeholder="Enter first answer option."
         />
-        <label htmlFor="answer2">Answer #2: </label>
+        <label htmlFor="answer_2">Answer #2: </label>
         <input
           type="text"
-          name="answer2"
-          id="answer2"
+          name="answer_2"
+          id="answer_2"
           size="35"
           placeholder="Enter second answer option."
         />

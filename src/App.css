@@ -111,12 +111,15 @@ p {
 }
 
 ul {
-    list-style-type: disc;
+    
     padding-left: 2rem;
     padding-bottom: .5rem;
+    
 }
 
 li {
+    display: list-item;
+    list-style-type: disc;
     padding-bottom: .25rem;
     font-size: 1.25rem;
     line-height: 1.4;
