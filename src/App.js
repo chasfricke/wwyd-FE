@@ -6,27 +6,27 @@ import Add from './components/AddForm'
 import { Section } from './components/Card'
 import { Update } from './components/Update'
 import { Contact } from './components/Contact'
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button } from 'react-bootstrap'
 
 class App extends Component {
   constructor(props, context) {
-    super(props, context);
+    super(props, context)
 
-    this.handleShow = this.handleShow.bind(this);
-    this.handleClose = this.handleClose.bind(this);
+    this.handleShow = this.handleShow.bind(this)
+    this.handleClose = this.handleClose.bind(this)
 
     this.state = {
       questions: [],
       show: false
-    };
+    }
   }
 
   handleClose() {
-    this.setState({ show: false });
+    this.setState({ show: false })
   }
 
   handleShow() {
-    this.setState({ show: true });
+    this.setState({ show: true })
   }
 
   componentDidMount() {
@@ -37,7 +37,6 @@ class App extends Component {
     return fetch('https://wwydbackend.herokuapp.com/questions')
       .then(response => response.json())
       .then(data => {
-        console.log(data.questions)
         this.setState({ questions: data.questions })
       })
   }
@@ -56,9 +55,8 @@ class App extends Component {
       response2: 1
     }
     this.addQuestion(question)
-    console.log(questions)
     this.setState({ questions })
-    event.target.reset();
+    event.target.reset()
   }
 
   addQuestion = question => {
@@ -71,7 +69,6 @@ class App extends Component {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         this.getQuestions()
       })
       .catch(error => console.error('Error:', error))
@@ -91,29 +88,31 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-        <div className="title-div">
-          <h2>HOW TO PLAY</h2>
-        </div>
-        <div className="instructions-container">
-          <SplashScreen />
-          <Section questionsCard={this.state.questions} />
-        </div>
-        <div>
-        <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          <h3>ADD SUBMISSION</h3>
-        </Button>
-        <Modal show={this.state.show} onHide={this.handleClose}>
-           <Modal.Header closeButton>
-             <Modal.Title>Update Your Question</Modal.Title>
-           </Modal.Header>
-           <Modal.Body>
-           <Add onSubmit={this.onSubmit} />
-          </Modal.Body>
-            <Modal.Footer>
-              <Button className="button" onClick={this.handleClose}><h3>CLOSE</h3></Button>
-            </Modal.Footer>
-          </Modal>
-        </div>
+          <div className="title-div">
+            <h2>HOW TO PLAY</h2>
+          </div>
+          <div className="instructions-container">
+            <SplashScreen />
+            <Section questionsCard={this.state.questions} />
+          </div>
+          <div>
+            <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+              <h3>ADD SUBMISSION</h3>
+            </Button>
+            <Modal show={this.state.show} onHide={this.handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>Update Your Question</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Add onSubmit={this.onSubmit} />
+              </Modal.Body>
+              <Modal.Footer>
+                <Button className="button" onClick={this.handleClose}>
+                  <h3>CLOSE</h3>
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </div>
           <Update />
           <Contact />
         </main>
