@@ -6,9 +6,10 @@ export class Header extends React.Component {
     return (
       <header>
         <img className="header-image" src="./assets/logo.png" alt="logo" />
-        
+        <img className="header-title" src="./assets/title.png" alt="logo" />
 
-        <img className="hamburger-button" src="./assets/hamburger_button.png" alt="button" />
+
+        <img className="hamburger-button" src="./assets/hamburger-button_2.png" alt="button" />
       </header>
     );
   }

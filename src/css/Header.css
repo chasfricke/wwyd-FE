@@ -25,6 +25,14 @@ margin-right: 2rem;
     
 }
 
+.header-title {
+    width: 60vw;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    
+}
+
 .hamburger-button {
     width: 8vw;
     height: 8vw;
