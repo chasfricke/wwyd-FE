@@ -30,14 +30,11 @@ export class Section extends React.Component {
 
   getRandomCard = () => {
     let rindex = Math.floor(Math.random() * this.props.questionsCard.length)
-    console.log(rindex, 'this is the random index')
     return this.props.questionsCard[rindex - 1]
   }
 
   createCard(randomCard, index) {
     var randomCard = this.props.questionsCard[this.state.show - 1]
-    console.log(randomCard)
-    console.log(this.state)
 
     if (!this.state.show) {
       return null
@@ -70,7 +67,7 @@ export class Section extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.show)
     return (
       <div>
         <Button
@@ -86,7 +83,7 @@ export class Section extends React.Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title />
+            <Modal.Title>{this.state.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <section>
