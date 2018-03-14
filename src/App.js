@@ -76,10 +76,7 @@ class App extends Component {
           <div className="title-div">
             <h2>HOW TO PLAY</h2>
           </div>
-          <div className="instructions-container">
-            <SplashScreen />
-            <Section questionsCard={this.state.questions} />
-          </div>
+
           <Add onSubmit={this.onSubmit} />
           <Update />
           <Contact />

@@ -7,9 +7,42 @@ export class Section extends React.Component {
 
     this.handleShow = this.handleShow.bind(this)
     this.handleClose = this.handleClose.bind(this)
+    this.deleteQuestion = this.deleteQuestion.bind(this)
 
     this.state = {
       show: undefined
+    }
+  }
+  deleteQuestion = event => {
+    this.props.deleteQuestion(this.state.randomCard)
+  }
+
+  deleteRandomQuestion = id => {
+    return fetch('https://wwydbackend.herokuapp.com/questions/' + id, {
+      method: 'DELETE',
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      })
+    })
+      .then(response => this.props.loadData())
+      .catch(error => console.error('Error', error))
+  }
+
+  onDelete = event => {
+    event.preventDefault()
+    const data = new FormData(event.target)
+    this.deleteRandomQuestion(data.get('id'))
+  }
+
+  renderDeleteButton = item => {
+    if (item.id < 25) {
+      return ''
+    } else {
+      return (
+        <button className="delete" onClick={() => this.deleteRandomQuestion(item.id)}>
+          Delete
+        </button>
+      )
     }
   }
 
