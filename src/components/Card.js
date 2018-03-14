@@ -6,6 +6,7 @@ export class Section extends React.Component {
     this.handleShow = this.handleShow.bind(this)
     this.handleClose = this.handleClose.bind(this)
     this.deleteQuestion = this.deleteQuestion.bind(this)
+    this.updateQuestion = this.updateQuestion.bind(this)
     this.state = {
       show: undefined,
       title: undefined,
