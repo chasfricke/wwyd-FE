@@ -1,5 +1,4 @@
 header {
-/* background-color: lightgray;     */
 display: flex;
 flex-direction: row;
 align-items: center;
@@ -15,7 +14,6 @@ margin-right: 2rem;
     flex-direction: row; 
     justify-content: center;
 }
-
 
 .header-image {
     width: 10vw;

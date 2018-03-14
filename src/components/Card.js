@@ -1,7 +1,6 @@
 import React from 'react';
 import { Modal, Button } from "react-bootstrap";
 
-
 export class Section extends React.Component {
   constructor(props, context) {
    super(props, context);
@@ -61,27 +60,25 @@ export class Section extends React.Component {
   }
 
   render() {
-    console.log(this.state.show)
     return (
       <div>
-      <Button className="play-button" bsStyle="primary" bsSize="large" onClick={(e)=>{this.handleShow(e)}}>
-         <h3>PLAY</h3>
-       </Button>
-
-      <Modal show={this.state.show} onHide={this.handleClose}>
-         <Modal.Header closeButton>
-           <Modal.Title>{this.state.title}</Modal.Title>
-         </Modal.Header>
-         <Modal.Body>
-      <section>
-        <ul className="questionList">{this.createCard()}</ul>
-      </section>
-      </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={this.handleClose}><h3>CLOSE</h3></Button>
-        </Modal.Footer>
-      </Modal>
-    </div>
+        <Button className="play-button" bsStyle="primary" bsSize="large" onClick={(e)=>{this.handleShow(e)}}>
+        <h3>PLAY</h3>
+        </Button>
+        <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>{this.state.title}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+        <section>
+          <ul className="questionList">{this.createCard()}</ul>
+        </section>
+        </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.handleClose}><h3>CLOSE</h3></Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
     )
   }
 }
