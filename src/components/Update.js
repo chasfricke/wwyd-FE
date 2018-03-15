@@ -1,36 +1,36 @@
-import React from "react";
-import "../css/Update.css";
-import { Modal, Button } from "react-bootstrap";
+import React from 'react'
+import '../css/Update.css'
+import { Modal, Button } from 'react-bootstrap'
 
 export class Update extends React.Component {
   constructor(props, context) {
-   super(props, context);
+    super(props, context)
 
-   this.handleShow = this.handleShow.bind(this);
-   this.handleClose = this.handleClose.bind(this);
+    this.handleShow = this.handleShow.bind(this)
+    this.handleClose = this.handleClose.bind(this)
 
-   this.state = {
-     show: false
-   };
- }
+    this.state = {
+      show: false
+    }
+  }
 
- handleClose() {
-   this.setState({ show: false });
- }
+  handleClose() {
+    this.setState({ show: false })
+  }
 
- handleShow() {
-   this.setState({ show: true });
- }
+  handleShow() {
+    this.setState({ show: true })
+  }
 
-  render () {
+  render() {
     return (
       <div>
-      <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-        <h3>EDIT</h3>
-      </Button>
+        <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+          <h3>EDIT</h3>
+        </Button>
 
       <Modal show={this.state.show} onHide={this.handleClose}>
-         <Modal.Body className="modal-body">
+        <Modal.Body className="modal-body">
          <h3>UPDATE QUESTION</h3>
         <form>
           <label htmlFor="title"></label>
@@ -73,6 +73,6 @@ export class Update extends React.Component {
           </Modal.Footer> */}
         </Modal>
       </div>
-    );
+    )
   }
 }

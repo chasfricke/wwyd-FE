@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "animejs": "^2.2.0",
+    "flipclock": "^0.7.8",
     "npm": "^5.7.1",
     "react": "^16.2.0",
     "react-anime": "^2.1.0",
     "react-bootstrap": "^0.32.1",
+    "react-clock": "^2.2.1",
+    "react-countdown-clock": "^2.4.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1"
   },
