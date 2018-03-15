@@ -27,5 +27,11 @@ li {
 
 .questionList {
     all: unset;
-    
+
+}
+
+.update-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
