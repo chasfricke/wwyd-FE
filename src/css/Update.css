@@ -4,13 +4,6 @@
     align-items: center;
 }
 
-/* form {
-    display: flex;
-    flex-direction: column;
-    width: 60vw;
-    align-items: center;
-} */
-
 label {
     margin-top: 1rem;
 }

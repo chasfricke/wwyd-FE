@@ -1,9 +1,4 @@
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem;
-}
+
 
 form {
     display: flex;
@@ -17,6 +12,11 @@ label {
     margin-top: 1rem;
 }
 
-.button {
-    background-color: #9867D5;
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #627187, #303742);
+    /* padding: 1rem;   */
+    box-shadow: 0px 10px 10px black;
 }

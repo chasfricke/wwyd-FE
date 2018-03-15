@@ -3,7 +3,6 @@ import '../css/Add.css'
 
 export default function Form({ onSubmit }) {
   return (
-    <div className="form-container">
       <form className="addform" id="form" onSubmit={onSubmit}>
         <label htmlFor="title">Title: </label>
         <textarea
@@ -39,6 +38,5 @@ export default function Form({ onSubmit }) {
         />
         <button type="submit" value="Submit"><h3>SUBMIT</h3></button>
       </form>
-    </div>
   )
 }

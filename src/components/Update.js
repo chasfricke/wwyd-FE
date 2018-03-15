@@ -30,9 +30,9 @@ export class Update extends React.Component {
       </Button>
 
       <Modal show={this.state.show} onHide={this.handleClose}>
-         {/* <Modal.Header closeButton>
-           <Modal.Title>EDIT A QUESTION</Modal.Title>
-         </Modal.Header> */}
+         <Modal.Header>
+           <Modal.Title><h2>EDIT QUESTION</h2></Modal.Title>
+         </Modal.Header>
          <Modal.Body className="modal-body">
         <form>
           <label htmlFor="title">Title: </label>
