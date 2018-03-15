@@ -35,13 +35,15 @@ export class Contact extends React.Component {
   render() {
     return (
       <div>
+      <div className="team-header"><h2>DEV TEAM</h2></div>
+      <div className="team-container">
         <div className="contact-parent">
             {/* <Ross /> */}
             <div id="ross" className="contact-info" onMouseEnter={this.growCard} 
             onMouseLeave={this.shrinkCard}
             >
               <img className="headshot" src="https://media.licdn.com/dms/image/C4D03AQHDCO3YWK2JAg/profile-displayphoto-shrink_800_800/0?e=1526158800&v=alpha&t=PocEOX63avPI3o9UWU562TeZJaQ1hQ3FSsnQUUMzFTg" alt="logo" />
-              <p className="name">Ross Prehn</p>
+              <h2 className="name">Ross Prehn</h2>
               <p className="title">Full Stack Developer</p>
               <div className="social">
                 <p className="social-icon"><a className="linked-in" href="https://www.linkedin.com/in/rossprehn/" target="_blank" rel="noopener noreferrer"><img className="social-icon" src="./assets/linkedin.png" alt="icon" /></a></p>
@@ -80,6 +82,7 @@ export class Contact extends React.Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     );
   }

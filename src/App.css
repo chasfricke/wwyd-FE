@@ -119,6 +119,7 @@ p {
 ul {
     padding-left: 2rem;
     padding-bottom: .5rem;
+    list-style-type: disc;
 }
 
 li {
@@ -127,6 +128,7 @@ li {
     line-height: 1.4;
     font-family: OpenSans-Regular;
     color: white;
+    
 }
 
 button,
@@ -139,7 +141,7 @@ button,
     text-align: center;
     text-decoration: none;
     outline: none;
-    background-color: rgb(255, 0, 40);
+    background-color: rgb(255, 0, 40) !important;
     border-radius: 10px;
     border:none;
     box-shadow: 0px 5px 10px black;
@@ -148,13 +150,15 @@ button,
   button:hover,
   .play-button:hover,
   .add-button:hover,
-  .button:hover {background-color: rgb(190, 4, 56)}
+  .button:hover {
+    background-color: rgb(190, 4, 56) !important;
+  }
 
   button:active,
   .play-button:active,
   .add-button:active,
   .button:active {
-    background-color: rgb(128, 3, 37);
+    background-color: rgb(128, 3, 37) !important;
     transform: translateY(4px);
   }
 
@@ -174,7 +178,7 @@ button,
 .splash-buttons {
 	display: flex;
 	flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
