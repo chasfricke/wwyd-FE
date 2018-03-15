@@ -57,7 +57,6 @@ export class Section extends React.Component {
           <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleEdit}>
             <h3>EDIT QUESTION</h3>
           </Button>
-
           <Modal show={this.state.editingQuestion} onHide={this.handleClose}>
             <Modal.Body>
               <form>
