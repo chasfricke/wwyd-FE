@@ -30,38 +30,40 @@ export class Update extends React.Component {
       </Button>
 
       <Modal show={this.state.show} onHide={this.handleClose}>
-         <Modal.Header>
-           <Modal.Title><h2>EDIT QUESTION</h2></Modal.Title>
-         </Modal.Header>
          <Modal.Body className="modal-body">
+         <h3>UPDATE QUESTION</h3>
         <form>
-          <label htmlFor="title">Title: </label>
+          <label htmlFor="title"></label>
           <textarea
             name="title"
             rows="2"
             cols="50"
             id="title"
+            placeholder="Enter title here..."
           />
-          <label htmlFor="question">Question: </label>
+          <label htmlFor="question"></label>
           <textarea
             name="question"
             rows="10"
             cols="50"
             id="question"
+            placeholder="Enter question here..."
           />
-          <label htmlFor="answer_1">Answer #1: </label>
+          <label htmlFor="answer_1"></label>
           <input
             type="text"
             name="answer_1"
             id="answer_1"
             size="35"
+            placeholder="Enter first answer option..."
           />
-          <label htmlFor="answer_2">Answer #2: </label>
+          <label htmlFor="answer_2"></label>
           <input
             type="text"
             name="answer_2"
             id="answer_2"
             size="35"
+            placeholder="Enter second answer option..."
           />
           <button><h3>UPDATE</h3></button>
         </form>

@@ -86,20 +86,16 @@ class App extends Component {
             <SplashScreen />
             <div className="splash-buttons">
               <Section questionsCard={this.state.questions} />
-              <div>
-                <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-                <h3>+</h3>
-                </Button>
-                <Modal show={this.state.show} onHide={this.handleClose}>
-                <Modal.Header className="modal-header">
-                <Modal.Title><h2>ADD A QUESTION</h2></Modal.Title>
-                </Modal.Header>
-                <Modal.Body className="modal-body">
-                <Add onSubmit={this.onSubmit} />
-                </Modal.Body>
-                </Modal>
-              </div>
+              <Button className="add-button" onClick={this.handleShow}>
+              <span className="plus-sign">+</span>
+              </Button>
             </div>
+            <Modal show={this.state.show} onHide={this.handleClose}>
+            <Modal.Body className="modal-body">
+            <h3>ADD A QUESTION</h3>
+            <Add onSubmit={this.onSubmit} />
+            </Modal.Body>
+            </Modal>
           </div>
           <Contact />
         </main>
