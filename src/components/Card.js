@@ -1,7 +1,6 @@
 import React from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import '../css/Card.css'
-import { Update } from './Update'
 
 export class Section extends React.Component {
   constructor(props, context) {
@@ -118,7 +117,7 @@ export class Section extends React.Component {
     let rindex = Math.floor(Math.random() * this.props.questionsCard.length)
     return this.props.questionsCard[rindex -1]
   }
-  createCard(randomCard, index) {
+  createCard(index) {
     var randomCard = this.props.questionsCard[this.state.show -1]
     if (!this.state.show) {
       return null
