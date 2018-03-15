@@ -1,5 +1,6 @@
 import React from 'react'
 import { Modal, Button } from 'react-bootstrap'
+import '../css/Card.css';
 export class Section extends React.Component {
   constructor(props, context) {
     super(props, context)
@@ -45,7 +46,7 @@ export class Section extends React.Component {
     } else {
       return (
         <button className="delete" onClick={() => this.deleteRandomQuestion(show.id)}>
-          Delete
+          <h3>DELETE</h3>
         </button>
       )
     }
@@ -63,21 +64,21 @@ export class Section extends React.Component {
     return (
       <li key={show.id}>
         <div className="questionCard">
-          <h4 className="questionTitle">{show.title}</h4>
+          <h3 className="questionTitle">{show.title.toUpperCase()}</h3>
           <p className="questionText">{show.question}</p>
           <div className="response-buttons">
-            <button className="answer1">{show.answer1}</button>
-            <button className="answer2">{show.answer2}</button>
+            <button className="answer1"><h3>{show.answer1}</h3></button>
+            <button className="answer2"><h3>{show.answer2}</h3></button>
           </div>
           <Button
-            className="button"
+            className="next-button"
             bsStyle="primary"
             bsSize="large"
             onClick={e => {
               this.handleShow(e)
             }}
           >
-            <h3>NEXT</h3>
+            <h3>>>></h3>
           </Button>
           <div className="buttons" onClick={this.handleClose}>
             {this.renderDeleteButton(show)}
@@ -87,33 +88,33 @@ export class Section extends React.Component {
     )
   }
   render() {
-    console.log(this.state.show)
     return (
       <div>
-        <Button
-          className="play-button"
-          bsStyle="primary"
-          bsSize="large"
-          onClick={e => {
-            this.handleShow(e)
-          }}
-        >
-          <h3>PLAY</h3>
-        </Button>
+        <div className="button-container">
+          <Button
+            className="play-button"
+            bsStyle="primary"
+            bsSize="large"
+            onClick={e => {
+              this.handleShow(e)
+            }}>
+            <h3>PLAY</h3>
+          </Button>
+        </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
+          {/* <Modal.Header closeButton>
             <Modal.Title>{this.state.title}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
+          </Modal.Header> */}
+          <Modal.Body closeButton >
             <section>
               <ul className="questionList">{this.createCard()}</ul>
             </section>
           </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.handleClose}>
+          {/* <Modal.Footer>
+            <Button className="button" onClick={this.handleClose}>
               <h3>CLOSE</h3>
             </Button>
-          </Modal.Footer>
+          </Modal.Footer> */}
         </Modal>
       </div>
     )

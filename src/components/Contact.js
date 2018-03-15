@@ -23,6 +23,7 @@ export class Contact extends React.Component {
       scale: 1.0
     })
   }
+
   render() {
     return (
       <div>

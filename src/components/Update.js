@@ -26,16 +26,15 @@ export class Update extends React.Component {
     return (
       <div>
       <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-        <h3>UPDATE SUBMISSION</h3>
+        <h3>EDIT A QUESTION</h3>
       </Button>
 
       <Modal show={this.state.show} onHide={this.handleClose}>
          <Modal.Header closeButton>
-           <Modal.Title>Update Your Question</Modal.Title>
+           <Modal.Title>EDIT A QUESTION</Modal.Title>
          </Modal.Header>
          <Modal.Body>
         <form>
-          <h2>Update A Question...</h2>
           <label htmlFor="title">Title: </label>
           <textarea
             name="title"
