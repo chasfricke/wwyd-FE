@@ -27,7 +27,7 @@ h2 {
     align-self: center;
 }
 
-ul {
-    list-style-type: disc;
+.splash-list li {
+    list-style-type: disc !important;
 }
 
