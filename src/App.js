@@ -55,7 +55,7 @@ class App extends Component {
     }
     this.addQuestion(question)
     this.setState({ questions })
-    event.target.reset();
+    event.target.reset()
     this.setState({ show: false })
   }
 
@@ -87,16 +87,23 @@ class App extends Component {
             <div className="splash-buttons">
               <Section questionsCard={this.state.questions} />
               <div>
-                <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-                <h3>+</h3>
+                <Button
+                  className="button"
+                  bsStyle="primary"
+                  bsSize="large"
+                  onClick={this.handleShow}
+                >
+                  <h3>+</h3>
                 </Button>
                 <Modal show={this.state.show} onHide={this.handleClose}>
-                <Modal.Header className="modal-header">
-                <Modal.Title><h2>ADD A QUESTION</h2></Modal.Title>
-                </Modal.Header>
-                <Modal.Body className="modal-body">
-                <Add onSubmit={this.onSubmit} />
-                </Modal.Body>
+                  <Modal.Header className="modal-header">
+                    <Modal.Title>
+                      <h2>ADD A QUESTION</h2>
+                    </Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body className="modal-body">
+                    <Add onSubmit={this.onSubmit} />
+                  </Modal.Body>
                 </Modal>
               </div>
             </div>
