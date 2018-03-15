@@ -116,10 +116,10 @@ export class Section extends React.Component {
 
   getRandomCard = () => {
     let rindex = Math.floor(Math.random() * this.props.questionsCard.length)
-    return this.props.questionsCard[rindex]
+    return this.props.questionsCard[rindex -1]
   }
   createCard(randomCard, index) {
-    var randomCard = this.props.questionsCard[this.state.show]
+    var randomCard = this.props.questionsCard[this.state.show -1]
     if (!this.state.show) {
       return null
     }
