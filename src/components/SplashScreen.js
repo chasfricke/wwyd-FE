@@ -5,7 +5,7 @@ export class SplashScreen extends React.Component {
   render () {
     return (
       <div >
-        
+
         <div>
           <h3>OVERVIEW</h3>
           <p><i>What Would You Do?</i> is collaborative group game designed to initiate meaningful conversation amongst adults.  Watch as even the most shy of the bunch can't help but weigh in on these wacky hypotheticals. The only question left to answer is... what would you do?</p>
@@ -26,9 +26,8 @@ export class SplashScreen extends React.Component {
           </ul>
           <h3>ADDITIONAL FEATURES</h3>
           <ul>
-            <li>Have a great question of your own?  Add it! Just click on the [describe process here]</li>
-            <li>Want to improve a question?  Just click on the [add process here].</li>
-            <li>Found an inappropriate question?  Delete it by [add process here].</li>
+            <li>Have a great question of your own?  Add it! Just click on the plus sign below!</li>
+            <li>Want to delete your question?  Delete it by clicking the delete button when your question displays</li>
           </ul>
         </div>
       </div>
