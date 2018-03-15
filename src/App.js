@@ -4,7 +4,6 @@ import { Header } from './components/Header'
 import { SplashScreen } from './components/SplashScreen'
 import Add from './components/AddForm'
 import { Section } from './components/Card'
-import { Update } from './components/Update'
 import { Contact } from './components/Contact'
 import { Modal, Button } from 'react-bootstrap'
 
@@ -85,22 +84,23 @@ class App extends Component {
           </div>
           <div className="instructions-container">
             <SplashScreen />
-            <Section questionsCard={this.state.questions} />
-          </div>
-          <div>
-            <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-              <h3>+</h3>
-            </Button>
-            <Modal show={this.state.show} onHide={this.handleClose}>
-              <Modal.Header className="modal-header">
+            <div className="splash-buttons">
+              <Section questionsCard={this.state.questions} />
+              <div>
+                <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+                <h3>+</h3>
+                </Button>
+                <Modal show={this.state.show} onHide={this.handleClose}>
+                <Modal.Header className="modal-header">
                 <Modal.Title><h2>ADD A QUESTION</h2></Modal.Title>
-              </Modal.Header>
-              <Modal.Body className="modal-body">
+                </Modal.Header>
+                <Modal.Body className="modal-body">
                 <Add onSubmit={this.onSubmit} />
-              </Modal.Body>
-            </Modal>
+                </Modal.Body>
+                </Modal>
+              </div>
+            </div>
           </div>
-          <Update />
           <Contact />
         </main>
       </div>

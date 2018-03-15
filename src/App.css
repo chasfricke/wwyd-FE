@@ -156,7 +156,6 @@ button,
     transform: translateY(4px);
   }
 
-
   .modal-body {
     display: flex;
     flex-direction: column;
@@ -168,4 +167,10 @@ button,
 
 .modal-header {
     background-color: #333333;
+}
+
+.splash-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
