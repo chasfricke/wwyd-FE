@@ -103,9 +103,7 @@ export class Section extends React.Component {
     event.preventDefault();
   }
   renderDeleteButton = show => {
-    if (show.id < 25) {
-      return ''
-    } else {
+    if (show.id > 25) {
       return (
         <div onClick={this.handleClose}>
           <button className="delete" onClick={() => this.deleteRandomQuestion(show.id)}>
