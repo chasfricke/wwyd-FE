@@ -25,7 +25,7 @@ export class Update extends React.Component {
   render() {
     return (
       <div>
-<<<<<<< HEAD
+
         <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
           <h3>EDIT A QUESTION</h3>
         </Button>
@@ -54,7 +54,7 @@ export class Update extends React.Component {
               <h3>CLOSE</h3>
             </Button>
           </Modal.Footer>
-=======
+
       <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
         <h3>EDIT</h3>
       </Button>
@@ -99,7 +99,6 @@ export class Update extends React.Component {
           {/* <Modal.Footer>
             <Button className="button" onClick={this.handleClose}><h3>CLOSE</h3></Button>
           </Modal.Footer> */}
->>>>>>> master
         </Modal>
       </div>
     )

@@ -93,14 +93,16 @@ class App extends Component {
             </Button>
             <Modal show={this.state.show} onHide={this.handleClose}>
               <Modal.Header className="modal-header">
-                <Modal.Title><h2>ADD A QUESTION</h2></Modal.Title>
+                <Modal.Title>
+                  <h2>ADD A QUESTION</h2>
+                </Modal.Title>
               </Modal.Header>
               <Modal.Body className="modal-body">
                 <Add onSubmit={this.onSubmit} />
               </Modal.Body>
             </Modal>
           </div>
-          <Update />
+
           <Contact />
         </main>
       </div>
