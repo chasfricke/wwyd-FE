@@ -1,8 +1,8 @@
 import React from "react";
 import '../css/Contact.css';
 import anime from 'animejs'
-import Anime from 'react-anime';
-import Ross from "./Ross.js"
+// import Anime from 'react-anime';
+// import Ross from "./Ross.js"
 export class Contact extends React.Component {
   // constructor(props) {
   //   super(props);
@@ -10,34 +10,33 @@ export class Contact extends React.Component {
   //     id: ""
   //   }
   // }
-  testAnime = (event) => {
-    <Anime scale={1.9 }>
-      <div className="ross" />
-    </Anime>
+  // testAnime = (event) => {
+  //   return <Anime scale={1.9}>
+  //     <div className="ross" />
+  //   </Anime>
+  // }
+  growCard = (event) => {
+    // console.log(event.currentTarget.id + " grow");
+    var target = event.currentTarget.id
+    anime({
+      targets: "#" + target,
+      scale: 1.02
+    })
   }
-
-  // growCard = (event) => {
-  //   // console.log(event.currentTarget.id + " grow");
-  //   var target = event.currentTarget.id
-  //   anime({
-  //     targets: "#" + target,
-  //     scale: 1.05
-  //   })
-  // }
-  // shrinkCard = (event) => {
-  //   // console.log(event.currentTarget.id + " shrink");
-  //   var target = event.currentTarget.id
-  //   anime({
-  //     targets: "#" + target,
-  //     scale: 1.0
-  //   })
-  // }
+  shrinkCard = (event) => {
+    // console.log(event.currentTarget.id + " shrink");
+    var target = event.currentTarget.id
+    anime({
+      targets: "#" + target,
+      scale: 1.0
+    })
+  }
 
   render() {
     return (
       <div>
         <div className="contact-parent">
-            <Ross />
+            {/* <Ross /> */}
             <div id="ross" className="contact-info" onMouseEnter={this.growCard} 
             onMouseLeave={this.shrinkCard}
             >

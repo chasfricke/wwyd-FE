@@ -37,8 +37,9 @@ class Ross extends React.Component {
             )
         } else {
             return (
-                <div id="ross" className="contact-info" onMouseEnter={this.growCard}
-                    onMouseLeave={this.shrinkCard}
+                <div id="ross" className="contact-info" 
+                // onMouseEnter={this.growCard}
+                //     onMouseLeave={this.shrinkCard}
                 >
                     <img className="headshot" src="https://media.licdn.com/dms/image/C4D03AQHDCO3YWK2JAg/profile-displayphoto-shrink_800_800/0?e=1526158800&v=alpha&t=PocEOX63avPI3o9UWU562TeZJaQ1hQ3FSsnQUUMzFTg" alt="logo" />
                     <p className="name">Ross Prehn</p>
