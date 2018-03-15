@@ -35,7 +35,7 @@ export class Section extends React.Component {
   }
   updateRandomQuestion = id => {
     return fetch('https://wwydbackend.herokuapp.com/questions/' + id, {
-      method: 'UPDATE',
+      method: 'PUT',
       headers: new Headers({
         'Content-Type': 'application/json'
       })
