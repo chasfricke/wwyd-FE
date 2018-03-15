@@ -1,44 +1,55 @@
 import React from "react";
 import '../css/Contact.css';
 import anime from 'animejs'
+import Anime from 'react-anime';
+import Ross from "./Ross.js"
 export class Contact extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: ""
-    }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     id: ""
+  //   }
+  // }
+  testAnime = (event) => {
+    <Anime scale={1.9 }>
+      <div className="ross" />
+    </Anime>
   }
 
-  growCard = (event) => {
-    var target = event.currentTarget.id
-    anime({
-      targets: "#" + target,
-      scale: 1.05
-    })
-  }
-  shrinkCard = (event) => {
-    var target = event.currentTarget.id
-    anime({
-      targets: "#" + target,
-      scale: 1.0
-    })
-  }
+  // growCard = (event) => {
+  //   // console.log(event.currentTarget.id + " grow");
+  //   var target = event.currentTarget.id
+  //   anime({
+  //     targets: "#" + target,
+  //     scale: 1.05
+  //   })
+  // }
+  // shrinkCard = (event) => {
+  //   // console.log(event.currentTarget.id + " shrink");
+  //   var target = event.currentTarget.id
+  //   anime({
+  //     targets: "#" + target,
+  //     scale: 1.0
+  //   })
+  // }
 
   render() {
     return (
       <div>
         <div className="contact-parent">
-          <div id="ross" className="contact-info" onMouseEnter={this.growCard} onMouseLeave={this.shrinkCard}>
-            <img className="headshot" src="https://media.licdn.com/dms/image/C4D03AQHDCO3YWK2JAg/profile-displayphoto-shrink_800_800/0?e=1526158800&v=alpha&t=PocEOX63avPI3o9UWU562TeZJaQ1hQ3FSsnQUUMzFTg" alt="logo" />
-            <p className="name">Ross Prehn</p>
-            <p className="title">Full Stack Developer</p>
-            <break></break>
-            <div className="social">
-              <p className="social-icon"><a className="linked-in" href="https://www.linkedin.com/in/rossprehn/" target="_blank" rel="noopener noreferrer"><img className="social-icon" src="./assets/linkedin.png" alt="icon" /></a></p>
-              <p className="social-icon"><a className="github" href="https://github.com/rossprehn" target="_blank" rel="noopener noreferrer"><img className="social-icon" src="./assets/github.png" alt="icon" /></a></p>
-              <p className="social-icon"><a className="email" href="mailto: johnross.prehn@gmail.com"><img className="social-icon" src="./assets/email.png" alt="icon" /></a></p>
+            <Ross />
+            <div id="ross" className="contact-info" onMouseEnter={this.growCard} 
+            onMouseLeave={this.shrinkCard}
+            >
+              <img className="headshot" src="https://media.licdn.com/dms/image/C4D03AQHDCO3YWK2JAg/profile-displayphoto-shrink_800_800/0?e=1526158800&v=alpha&t=PocEOX63avPI3o9UWU562TeZJaQ1hQ3FSsnQUUMzFTg" alt="logo" />
+              <p className="name">Ross Prehn</p>
+              <p className="title">Full Stack Developer</p>
+              <div className="social">
+                <p className="social-icon"><a className="linked-in" href="https://www.linkedin.com/in/rossprehn/" target="_blank" rel="noopener noreferrer"><img className="social-icon" src="./assets/linkedin.png" alt="icon" /></a></p>
+                <p className="social-icon"><a className="github" href="https://github.com/rossprehn" target="_blank" rel="noopener noreferrer"><img className="social-icon" src="./assets/github.png" alt="icon" /></a></p>
+                <p cl  assName="social-icon"><a className="email" href="mailto: johnross.prehn@gmail.com"><img className="social-icon" src="./assets/email.png" alt="icon" /></a></p>
+              </div>
             </div>
-          </div>
           <div id="nick" className="contact-info" onMouseOver={this.growCard} onMouseLeave={this.shrinkCard}>
             <img className="headshot" src="https://media.licdn.com/dms/image/C5103AQF3_YNT5v1ZCA/profile-displayphoto-shrink_800_800/0?e=1526155200&v=alpha&t=3UoNYZrwHQPOtI8_nfuKKphq1QT_-JkKnIx1X5W5OZo" alt="logo" />
             <p className="name">Nicholas Solimine</p>
@@ -70,7 +81,6 @@ export class Contact extends React.Component {
             </div>
           </div>
         </div>
-
       </div>
     );
   }
