@@ -9,14 +9,14 @@ export class Section extends React.Component {
     this.handleShow = this.handleShow.bind(this)
     this.handleClose = this.handleClose.bind(this)
     this.deleteQuestion = this.deleteQuestion.bind(this)
-
     this.updateQuestion = this.updateQuestion.bind(this)
     this.state = {
       show: undefined,
       title: undefined,
       question: undefined,
       answer1: undefined,
-      answer2: undefined
+      answer2: undefined,
+      editingQuestion: undefined
     }
   }
   handleClose = () => {
@@ -26,6 +26,12 @@ export class Section extends React.Component {
     e.preventDefault()
     this.setState({
       show: this.getRandomCard()
+    })
+  }
+  handleEdit = e => {
+    e.preventDefault()
+    this.setState({
+      editingQuestion: this.state.show
     })
   }
   updateQuestion = event => {
@@ -45,16 +51,14 @@ export class Section extends React.Component {
     event.preventDefault()
   }
   renderUpdateButton = show => {
-    if (show.id < 25) {
-      return ''
-    } else {
+    if (show.id > 25) {
       return (
         <div>
-          <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+          <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleEdit}>
             <h3>EDIT A QUESTION</h3>
           </Button>
 
-          <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal show={this.state.editingQuestion} onHide={this.handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>EDIT A QUESTION</Modal.Title>
             </Modal.Header>
@@ -64,10 +68,10 @@ export class Section extends React.Component {
                 <textarea name="title" rows="2" cols="50" id="title" />
                 <label htmlFor="question">Question: </label>
                 <textarea name="question" rows="10" cols="50" id="question" />
-                <label htmlFor="answer_1">Answer #1: </label>
-                <input type="text" name="answer_1" id="answer_1" size="35" />
-                <label htmlFor="answer_2">Answer #2: </label>
-                <input type="text" name="answer_2" id="answer_2" size="35" />
+                <label htmlFor="answer1">Answer #1: </label>
+                <input type="text" name="answer1" id="answer1" size="35" />
+                <label htmlFor="answer2">Answer #2: </label>
+                <input type="text" name="answer2" id="answer2" size="35" />
                 <button className="update" onClick={() => this.updateRandomQuestion(show.id)}>
                   <h3>UPDATE</h3>
                 </button>
@@ -98,6 +102,7 @@ export class Section extends React.Component {
   }
   onDelete = event => {
     event.preventDefault()
+    this.handleClose()
   }
   renderDeleteButton = show => {
     if (show.id < 25) {
@@ -128,10 +133,10 @@ export class Section extends React.Component {
           <h3 className="questionTitle">{show.title.toUpperCase()}</h3>
           <p className="questionText">{show.question}</p>
           <div className="response-buttons">
-            <button className="answer1">
+            <button className="answer1" onClick={() => this.addAnswer1(show.id)}>
               <h3>{show.answer1}</h3>
             </button>
-            <button className="answer2">
+            <button className="answer2" onClick={() => this.addAnswer2(show.id)}>
               <h3>{show.answer2}</h3>
             </button>
           </div>
@@ -145,7 +150,7 @@ export class Section extends React.Component {
           >
             <h3>>>></h3>
           </Button>
-          <div className="buttons" onClick={this.handleClose}>
+          <div className="buttons">
             {this.renderUpdateButton(show)}
             {this.renderDeleteButton(show)}
           </div>
@@ -169,19 +174,11 @@ export class Section extends React.Component {
           </Button>
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
-          {/* <Modal.Header closeButton>
-            <Modal.Title>{this.state.title}</Modal.Title>
-          </Modal.Header> */}
           <Modal.Body closeButton>
             <section>
               <ul className="questionList">{this.createCard()}</ul>
             </section>
           </Modal.Body>
-          {/* <Modal.Footer>
-            <Button className="button" onClick={this.handleClose}>
-              <h3>CLOSE</h3>
-            </Button>
-          </Modal.Footer> */}
         </Modal>
       </div>
     )
