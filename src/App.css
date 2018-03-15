@@ -157,3 +157,15 @@ button,
   }
 
 
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #627187, #303742);
+    /* padding: 1rem;   */
+    box-shadow: 0px 10px 10px black;
+}
+
+.modal-header {
+    background-color: #333333;
+}
