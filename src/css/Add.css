@@ -8,9 +8,9 @@
 form {
     display: flex;
     flex-direction: column;
-    width: 60vw;
+    max-width: 100%;
     align-items: center;
-    background-color: lightgray;
+    /* background-color: lightgray; */
 }
 
 label {
