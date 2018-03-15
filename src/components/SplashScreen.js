@@ -8,7 +8,7 @@ export class SplashScreen extends React.Component {
 
         <div>
           <h3>OVERVIEW</h3>
-          <p><i>What Would You Do?</i> is collaborative group game designed to initiate meaningful conversation amongst adults.  Watch as even the most shy of the bunch can't help but weigh in on these wacky hypotheticals. The only question left to answer is... what would you do?</p>
+          <p><i>Roominate</i> is a collaborative group game designed to initiate meaningful conversation amongst adults.  Watch as even the most shy of the bunch can't help but weigh in on these wacky hypotheticals. The only question left to answer is... what would you do?</p>
           <h3>REQUIREMENTS</h3>
           <ul>
             <li>Players:  2 - 1,000,000</li>

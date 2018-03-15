@@ -55,29 +55,22 @@ export class Section extends React.Component {
           </Button>
 
           <Modal show={this.state.show} onHide={this.handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>EDIT A QUESTION</Modal.Title>
-            </Modal.Header>
             <Modal.Body>
               <form>
-                <label htmlFor="title">Title: </label>
-                <textarea name="title" rows="2" cols="50" id="title" />
-                <label htmlFor="question">Question: </label>
-                <textarea name="question" rows="10" cols="50" id="question" />
-                <label htmlFor="answer_1">Answer #1: </label>
-                <input type="text" name="answer_1" id="answer_1" size="35" />
-                <label htmlFor="answer_2">Answer #2: </label>
-                <input type="text" name="answer_2" id="answer_2" size="35" />
+                <h3>EDIT QUESTION</h3>
+                <label htmlFor="title"></label>
+                <textarea name="title" rows="2" cols="50" id="title" placeholder="Enter title here.." />
+                <label htmlFor="question"></label>
+                <textarea name="question" rows="10" cols="50" id="question" placeholder="Enter question here..." />
+                <label htmlFor="answer_1"></label>
+                <input type="text" name="answer_1" id="answer_1" size="35" placeholder="Enter first answer option..." />
+                <label htmlFor="answer_2"></label>
+                <input type="text" name="answer_2" id="answer_2" size="35" placeholder="Enter second answer option..." />
                 <button className="update" onClick={() => this.updateRandomQuestion(show.id)}>
                   <h3>UPDATE</h3>
                 </button>
               </form>
             </Modal.Body>
-            <Modal.Footer>
-              <Button className="button" onClick={this.handleClose}>
-                <h3>CLOSE</h3>
-              </Button>
-            </Modal.Footer>
           </Modal>
         </div>
       )

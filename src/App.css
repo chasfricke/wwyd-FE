@@ -119,6 +119,7 @@ p {
 ul {
     padding-left: 2rem;
     padding-bottom: .5rem;
+    list-style-type: disc;
 }
 
 li {
@@ -127,6 +128,7 @@ li {
     line-height: 1.4;
     font-family: OpenSans-Regular;
     color: white;
+    
 }
 
 button,
@@ -176,7 +178,7 @@ button,
 .splash-buttons {
 	display: flex;
 	flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
