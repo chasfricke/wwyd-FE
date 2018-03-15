@@ -147,10 +147,12 @@ button,
 
   button:hover,
   .play-button:hover,
+  .add-button:hover,
   .button:hover {background-color: rgb(190, 4, 56)}
 
   button:active,
   .play-button:active,
+  .add-button:active,
   .button:active {
     background-color: rgb(128, 3, 37);
     transform: translateY(4px);
@@ -172,5 +174,25 @@ button,
 .splash-buttons {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.plus-sign {
+    font-size: 60px;
+    color: #303742;
+    margin-right: 1.2rem;
+    margin-left: 1.2rem;
+
+
+}
+
+.add-button {
+    border-radius: 100px;
+    border: none;
+    background-color: rgb(255, 0, 40) !important; 
+}
+
+.modal-content {
+    border: none;
 }
