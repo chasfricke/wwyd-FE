@@ -9,14 +9,14 @@ export class Section extends React.Component {
     this.handleShow = this.handleShow.bind(this)
     this.handleClose = this.handleClose.bind(this)
     this.deleteQuestion = this.deleteQuestion.bind(this)
-
     this.updateQuestion = this.updateQuestion.bind(this)
     this.state = {
       show: undefined,
       title: undefined,
       question: undefined,
       answer1: undefined,
-      answer2: undefined
+      answer2: undefined,
+      editingQuestion: undefined
     }
   }
   handleClose = () => {
@@ -26,6 +26,16 @@ export class Section extends React.Component {
     e.preventDefault()
     this.setState({
       show: this.getRandomCard()
+    })
+  }
+
+
+
+
+  handleEdit = e => {
+    e.preventDefault()
+    this.setState({
+      editingQuestion: this.state.show
     })
   }
   updateQuestion = event => {
@@ -45,32 +55,30 @@ export class Section extends React.Component {
     event.preventDefault()
   }
   renderUpdateButton = show => {
-    if (show.id < 25) {
-      return ''
-    } else {
+    if (show.id > 25) {
       return (
         <div>
-          <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-            <h3>EDIT A QUESTION</h3>
+          <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleEdit}>
+            <h3>EDIT QUESTION</h3>
           </Button>
-
-          <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal show={this.state.editingQuestion} onHide={this.handleClose}>
             <Modal.Body>
-              <form>
-                <h3>EDIT QUESTION</h3>
-                <label htmlFor="title"></label>
-                <textarea name="title" rows="2" cols="50" id="title" placeholder="Enter title here.." />
-                <label htmlFor="question"></label>
-                <textarea name="question" rows="10" cols="50" id="question" placeholder="Enter question here..." />
-                <label htmlFor="answer_1"></label>
-                <input type="text" name="answer_1" id="answer_1" size="35" placeholder="Enter first answer option..." />
-                <label htmlFor="answer_2"></label>
-                <input type="text" name="answer_2" id="answer_2" size="35" placeholder="Enter second answer option..." />
-                <button className="update" onClick={() => this.updateRandomQuestion(show.id)}>
-                  <h3>UPDATE</h3>
-                </button>
-              </form>
+            <form>
+              <h3>EDIT QUESTION</h3>
+              <label htmlFor="title"></label>
+              <textarea name="title" rows="2" cols="50" id="title" placeholder="Enter title here.." defaultValue={show.title}/>
+              <label htmlFor="question"></label>
+              <textarea name="question" rows="10" cols="50" id="question" placeholder="Enter question here..." defaultValue={show.question}/>
+              <label htmlFor="answer1"></label>
+              <input type="text" name="answer1" id="answer1" size="35" placeholder="Enter first answer option..." defaultValue={show.answer1}/>
+              <label htmlFor="answer2"></label>
+              <input type="text" name="answer2" id="answer2" size="35" placeholder="Enter second answer option..." defaultValue={show.answer2}/>
+              <button className="update" onClick={() => this.updateRandomQuestion(show.id)}>
+                <h3>UPDATE</h3>
+              </button>
+            </form>
             </Modal.Body>
+
           </Modal>
         </div>
       )
@@ -78,7 +86,7 @@ export class Section extends React.Component {
   }
   deleteQuestion = event => {
     this.props.deleteQuestion(this.state.show)
-    event.target.reset()
+    event.target.reset();
     this.setState({ show: false })
   }
   deleteRandomQuestion = id => {
@@ -90,26 +98,26 @@ export class Section extends React.Component {
     }).catch(error => console.error('Error', error))
   }
   onDelete = event => {
-    event.preventDefault()
+    event.preventDefault();
   }
   renderDeleteButton = show => {
-    if (show.id < 25) {
-      return ''
-    } else {
+    if (show.id > 25) {
       return (
-        <button className="delete" onClick={() => this.deleteRandomQuestion(show.id)}>
-          <h3>DELETE</h3>
-        </button>
+        <div onClick={this.handleClose}>
+          <button className="delete" onClick={() => this.deleteRandomQuestion(show.id)}>
+            <h3>DELETE</h3>
+          </button>
+        </div>
       )
     }
   }
 
   getRandomCard = () => {
     let rindex = Math.floor(Math.random() * this.props.questionsCard.length)
-    return this.props.questionsCard[rindex - 1]
+    return this.props.questionsCard[rindex -1]
   }
   createCard(randomCard, index) {
-    var randomCard = this.props.questionsCard[this.state.show - 1]
+    var randomCard = this.props.questionsCard[this.state.show -1]
     if (!this.state.show) {
       return null
     }
@@ -138,7 +146,7 @@ export class Section extends React.Component {
           >
             <h3>>>></h3>
           </Button>
-          <div className="buttons" onClick={this.handleClose}>
+          <div className="update-buttons">
             {this.renderUpdateButton(show)}
             {this.renderDeleteButton(show)}
           </div>
@@ -162,19 +170,11 @@ export class Section extends React.Component {
           </Button>
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
-          {/* <Modal.Header closeButton>
-            <Modal.Title>{this.state.title}</Modal.Title>
-          </Modal.Header> */}
           <Modal.Body closeButton>
             <section>
               <ul className="questionList">{this.createCard()}</ul>
             </section>
           </Modal.Body>
-          {/* <Modal.Footer>
-            <Button className="button" onClick={this.handleClose}>
-              <h3>CLOSE</h3>
-            </Button>
-          </Modal.Footer> */}
         </Modal>
       </div>
     )
