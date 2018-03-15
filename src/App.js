@@ -56,7 +56,7 @@ class App extends Component {
     }
     this.addQuestion(question)
     this.setState({ questions })
-    event.target.reset();
+    event.target.reset()
     this.setState({ show: false })
   }
 
