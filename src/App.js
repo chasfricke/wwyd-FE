@@ -89,20 +89,15 @@ class App extends Component {
           </div>
           <div>
             <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-              <h3>ADD QUESTION</h3>
+              <h3>+</h3>
             </Button>
             <Modal show={this.state.show} onHide={this.handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>ADD A QUESTION</Modal.Title>
+              <Modal.Header className="modal-header">
+                <Modal.Title><h2>ADD A QUESTION</h2></Modal.Title>
               </Modal.Header>
-              <Modal.Body>
+              <Modal.Body className="modal-body">
                 <Add onSubmit={this.onSubmit} />
               </Modal.Body>
-              <Modal.Footer>
-                <Button className="button" onClick={this.handleClose}>
-                  <h3>CLOSE</h3>
-                </Button>
-              </Modal.Footer>
             </Modal>
           </div>
           <Update />

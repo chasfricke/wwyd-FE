@@ -25,6 +25,7 @@ export class Update extends React.Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
         <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
           <h3>EDIT A QUESTION</h3>
         </Button>
@@ -53,6 +54,52 @@ export class Update extends React.Component {
               <h3>CLOSE</h3>
             </Button>
           </Modal.Footer>
+=======
+      <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+        <h3>EDIT</h3>
+      </Button>
+
+      <Modal show={this.state.show} onHide={this.handleClose}>
+         <Modal.Header>
+           <Modal.Title><h2>EDIT QUESTION</h2></Modal.Title>
+         </Modal.Header>
+         <Modal.Body className="modal-body">
+        <form>
+          <label htmlFor="title">Title: </label>
+          <textarea
+            name="title"
+            rows="2"
+            cols="50"
+            id="title"
+          />
+          <label htmlFor="question">Question: </label>
+          <textarea
+            name="question"
+            rows="10"
+            cols="50"
+            id="question"
+          />
+          <label htmlFor="answer_1">Answer #1: </label>
+          <input
+            type="text"
+            name="answer_1"
+            id="answer_1"
+            size="35"
+          />
+          <label htmlFor="answer_2">Answer #2: </label>
+          <input
+            type="text"
+            name="answer_2"
+            id="answer_2"
+            size="35"
+          />
+          <button><h3>UPDATE</h3></button>
+        </form>
+        </Modal.Body>
+          {/* <Modal.Footer>
+            <Button className="button" onClick={this.handleClose}><h3>CLOSE</h3></Button>
+          </Modal.Footer> */}
+>>>>>>> master
         </Modal>
       </div>
     )
