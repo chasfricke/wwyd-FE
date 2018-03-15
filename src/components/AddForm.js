@@ -5,7 +5,6 @@ export default function Form({ onSubmit }) {
   return (
     <div className="form-container">
       <form className="addform" id="form" onSubmit={onSubmit}>
-        <h2>Add A Question... </h2>
         <label htmlFor="title">Title: </label>
         <textarea
           name="title"
@@ -38,9 +37,7 @@ export default function Form({ onSubmit }) {
           size="35"
           placeholder="Enter second answer option."
         />
-        <button type="submit" value="Submit">
-         <h3>SUBMIT</h3> 
-        </button>
+        <button type="submit" value="Submit"><h3>SUBMIT</h3></button>
       </form>
     </div>
   )

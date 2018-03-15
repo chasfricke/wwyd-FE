@@ -56,7 +56,8 @@ class App extends Component {
     }
     this.addQuestion(question)
     this.setState({ questions })
-    event.target.reset()
+    event.target.reset();
+    this.setState({ show: false })
   }
 
   addQuestion = question => {
@@ -74,15 +75,6 @@ class App extends Component {
       .catch(error => console.error('Error:', error))
   }
 
-  // deleteQuestion = id => {
-  //   console.log('delete question', id, this.state)
-  //   return fetch('https://wwydbackend.herokuapp.com/questions/' + id, { method: 'DELETE' })
-  //     .then(response => response.text())
-  //     .then(response => {})
-  //     .then(this.data)
-  //     .catch(error => console.error)
-  // }
-
   render() {
     return (
       <div className="App">
@@ -97,11 +89,11 @@ class App extends Component {
           </div>
           <div>
             <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-              <h3>ADD SUBMISSION</h3>
+              <h3>ADD QUESTION</h3>
             </Button>
             <Modal show={this.state.show} onHide={this.handleClose}>
               <Modal.Header closeButton>
-                <Modal.Title>Update Your Question</Modal.Title>
+                <Modal.Title>ADD A QUESTION</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <Add onSubmit={this.onSubmit} />

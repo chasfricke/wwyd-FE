@@ -4,6 +4,16 @@
     width: 100vw;
 }
 
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url(./fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Thin;
+    src: url(./fonts/Raleway-Thin.ttf);
+}
+
 .contact-info {
     margin: 3%;
     background: linear-gradient(to bottom right, #627187, #303742);
@@ -22,9 +32,14 @@
     justify-content: center;
 }
 
+.headshot {
+        border-radius: 25px 25px 0px 0px;
+}
+
 img {
     width: 100%;
     height: auto;
+
 }
 
 /* .contact-info:hover * {
@@ -44,12 +59,15 @@ img {
 
 .name {
     font-size: 20px;
-    font: inherit;
     text-align: center;
+    color: #C6C6B8;
+    font-family: Raleway-Thin;
+
 }
 
 .title {
     font-size: 15px;
-    font: inherit;
     text-align: center;
+    font-family: OpenSans-Regular;
+    color:#101010;
 }

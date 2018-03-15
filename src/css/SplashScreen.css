@@ -1,5 +1,5 @@
 .title-div {
-    background-color: #9867D5;
+    background-color: #333333;
     margin-right: 2rem; 
     margin-left: 2rem;
     padding-top: 0.2rem;
@@ -25,5 +25,9 @@
 
 h2 {
     align-self: center;
+}
+
+ul {
+    list-style-type: disc;
 }
 
