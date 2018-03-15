@@ -26,14 +26,14 @@ export class Update extends React.Component {
     return (
       <div>
       <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-        <h3>EDIT A QUESTION</h3>
+        <h3>EDIT</h3>
       </Button>
 
       <Modal show={this.state.show} onHide={this.handleClose}>
-         <Modal.Header closeButton>
+         {/* <Modal.Header closeButton>
            <Modal.Title>EDIT A QUESTION</Modal.Title>
-         </Modal.Header>
-         <Modal.Body>
+         </Modal.Header> */}
+         <Modal.Body className="modal-body">
         <form>
           <label htmlFor="title">Title: </label>
           <textarea
@@ -66,9 +66,9 @@ export class Update extends React.Component {
           <button><h3>UPDATE</h3></button>
         </form>
         </Modal.Body>
-          <Modal.Footer>
+          {/* <Modal.Footer>
             <Button className="button" onClick={this.handleClose}><h3>CLOSE</h3></Button>
-          </Modal.Footer>
+          </Modal.Footer> */}
         </Modal>
       </div>
     );

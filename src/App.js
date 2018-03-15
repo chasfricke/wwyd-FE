@@ -89,7 +89,7 @@ class App extends Component {
           </div>
           <div>
             <Button className="button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-              <h3>ADD QUESTION</h3>
+              <h3>+</h3>
             </Button>
             <Modal show={this.state.show} onHide={this.handleClose}>
               <Modal.Header closeButton>
