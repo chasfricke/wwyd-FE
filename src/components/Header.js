@@ -5,9 +5,11 @@ export class Header extends React.Component {
   render() {
     return (
       <header>
-        <img className="header-image" src="./assets/logo.png" alt="logo" />
-        <img className="header-title" src="./assets/title.png" alt="What Would You Do?" />
-        <img className="hamburger-button" src="./assets/hamburger-button.png" alt="options" />
+        <img className="header-logo" src="./assets/logo.png" alt="logo" />
+        <div className="title-container">
+          <h1 className="header-title">ROOMINATE</h1>
+          <p className="header-tagline">questions that refuse to be ignored</p>
+        </div>
       </header>
     )
   }
