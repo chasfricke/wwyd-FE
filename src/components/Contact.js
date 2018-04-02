@@ -72,12 +72,12 @@ export class Contact extends React.Component {
             </div>
           </div>
           <div id="malcolm" className="contact-info" onMouseOver={this.growCard} onMouseLeave={this.shrinkCard}>
-            <img className="headshot" src="https://media.licdn.com/media/AAEAAQAAAAAAAArNAAAAJGI1M2FiNDg3LWY5NWEtNGZkNC05MTkxLWUzZjBjYjgyZDQ4Mw.jpg" alt="logo" />
+            <img className="headshot" src="https://www.linkedin.com/in/mfoster1989/detail/photo/" alt="logo" />
             <p className="name">Malcolm Foster</p>
             <p className="title">Full Stack Developer</p>
             <div className="social">
-              <p className="social-icon"><a className="linked-in" href="https://github.com/mfoster1989" target="_blank" rel="noopener noreferrer"><img className="social-icon" src="./assets/linkedin.png" alt="icon" /></a></p>
-              <p className="social-icon"><a className="github" href="https://www.linkedin.com/in/mfoster1989" target="_blank" rel="noopener noreferrer"><img className="social-icon" src="./assets/github.png" alt="icon" /></a></p>
+              <p className="social-icon"><a className="linked-in" href="https://www.linkedin.com/in/mfoster1989" target="_blank" rel="noopener noreferrer"><img className="social-icon" src="./assets/linkedin.png" alt="icon" /></a></p>
+              <p className="social-icon"><a className="github" href="https://github.com/mfoster1989" target="_blank" rel="noopener noreferrer"><img className="social-icon" src="./assets/github.png" alt="icon" /></a></p>
               <p className="social-icon"><a className="email" href="mailto: abc@example.com"><img className="social-icon" src="./assets/email.png" alt="icon" /></a></p>
             </div>
           </div>

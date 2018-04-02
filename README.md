@@ -4,22 +4,32 @@ Roominate is a collaborative group game that provides the user with an intriguin
 
 ## Getting Started
 
-
 The live Roominate app can be played here:  https://roominate-af37c.firebaseapp.com/
 
+Instructions:
 ![Alt text](/screenshots/splash-page.png?raw=true "splash-page")
+1. Read 'HOW TO PLAY' instructions on landing page
+2. Click 'PLAY' button on bottom left of the screen
+![Alt text](/screenshots/hypothetical.png?raw=true "hypothetical")
+3. Click either red button to select your group's response.  
+4. Click the ">>>" button to advance to the next question
+4. Click '+' button to add your own hypothetical question
+![Alt text](/screenshots/add-question.png?raw=true "add-question-form")
+5. You can delete or edit user-submitted questions by clicking on the corresponding buttons below.
+[Alt text](/screenshots/delete-edit.png?raw=true "delete-edit")
+6. Click off of the question popup to close the window.  
 
+
+Fork and clone both repos below for development on your local machine.  
 Front-End Repo:
 https://github.com/chasfricke/wwyd-FE
 
 Back-End Repo:
 https://github.com/Rossprehn/What-would-you-do-backend
 
-Fork and clone both repos for development on your local machine.  
-
 ### Prerequisites
 
-Run [npm install] to ensure that you access to all dependencies on your local repo.
+Run [npm install] in your terminal to ensure that you access to all dependencies on your local repo.
 
 ```
 "dependencies": {
@@ -42,21 +52,11 @@ Run [npm install] to ensure that you access to all dependencies on your local re
 3.  In your browser's address bar, type [localhost:8080]
 4.  Roominate should now render in your browser window
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
 Explain how to run the automated tests for this system
+
 
 ### Break down into end to end tests
 
@@ -66,44 +66,29 @@ Explain what these tests test and why
 Give an example
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [React.js](https://reactjs.org/) - Our JS front-end framework
+* [react-bootstrap](https://react-bootstrap.github.io/) - Modal styling
+* [anime.js](http://animejs.com/) - Animation library
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Ross Prehn** - *Full Stack Developer* - [LinkedIn](https://www.linkedin.com/in/rossprehn/)
+* **Nicholas Solimine** - *Full Stack Developer* - [LinkedIn](https://www.linkedin.com/in/nsolimine/)
+* **Chas Fricke** - *Full Stack Developer* - [LinkedIn](https://www.linkedin.com/in/chas-fricke/)
+* **Malcolm Foster** - *Full Stack Developer* - [LinkedIn](https://www.linkedin.com/in/mfoster1989/)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License 
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Galvanize instructional staff
+* Our fellow G70 students
+* Stack Overflow
