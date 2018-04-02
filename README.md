@@ -16,7 +16,7 @@ Instructions:<br/>
 4. Click '+' button to add your own hypothetical question<br/>
 ![Alt text](/screenshots/add-question.png?raw=true "add-question-form")<br/>
 5. You can delete or edit user-submitted questions by clicking on the corresponding buttons below.<br/>
-[Alt text](/screenshots/delete-edit.png?raw=true "delete-edit")<br/>
+![Alt text](/screenshots/delete-edit.png?raw=true "delete-edit")<br/>
 6. Click off of the question popup to close the window.  
 
 
