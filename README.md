@@ -6,17 +6,17 @@ Roominate is a collaborative group game that provides the user with an intriguin
 
 The live Roominate app can be played here:  https://roominate-af37c.firebaseapp.com/
 
-Instructions:
-![Alt text](/screenshots/splash-page.png?raw=true "splash-page")
+Instructions:<br/>
+![Alt text](/screenshots/splash-page.png?raw=true "splash-page")<br/>
 1. Read 'HOW TO PLAY' instructions on landing page
-2. Click 'PLAY' button on bottom left of the screen
-![Alt text](/screenshots/hypothetical.png?raw=true "hypothetical")
+2. Click 'PLAY' button on bottom left of the screen<br/>
+![Alt text](/screenshots/hypothetical.png?raw=true "hypothetical")<br/>
 3. Click either red button to select your group's response.  
 4. Click the ">>>" button to advance to the next question
-4. Click '+' button to add your own hypothetical question
-![Alt text](/screenshots/add-question.png?raw=true "add-question-form")
-5. You can delete or edit user-submitted questions by clicking on the corresponding buttons below.
-[Alt text](/screenshots/delete-edit.png?raw=true "delete-edit")
+4. Click '+' button to add your own hypothetical question<br/>
+![Alt text](/screenshots/add-question.png?raw=true "add-question-form")<br/>
+5. You can delete or edit user-submitted questions by clicking on the corresponding buttons below.<br/>
+[Alt text](/screenshots/delete-edit.png?raw=true "delete-edit")<br/>
 6. Click off of the question popup to close the window.  
 
 
