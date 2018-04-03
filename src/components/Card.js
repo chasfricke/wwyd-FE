@@ -27,10 +27,6 @@ export class Section extends React.Component {
       show: this.getRandomCard()
     })
   }
-
-
-
-
   handleEdit = e => {
     e.preventDefault()
     this.setState({
@@ -62,22 +58,49 @@ export class Section extends React.Component {
           </Button>
           <Modal show={this.state.editingQuestion} onHide={this.handleClose}>
             <Modal.Body>
-            <form>
-              <h3>EDIT QUESTION</h3>
-              <label htmlFor="title"></label>
-              <textarea name="title" rows="2" cols="50" id="title" placeholder="Enter title here.." defaultValue={show.title}/>
-              <label htmlFor="question"></label>
-              <textarea name="question" rows="10" cols="50" id="question" placeholder="Enter question here..." defaultValue={show.question}/>
-              <label htmlFor="answer1"></label>
-              <input type="text" name="answer1" id="answer1" size="35" placeholder="Enter first answer option..." defaultValue={show.answer1}/>
-              <label htmlFor="answer2"></label>
-              <input type="text" name="answer2" id="answer2" size="35" placeholder="Enter second answer option..." defaultValue={show.answer2}/>
-              <button className="update" onClick={() => this.updateRandomQuestion(show.id)}>
-                <h3>UPDATE</h3>
-              </button>
-            </form>
+              <form>
+                <h3>EDIT QUESTION</h3>
+                <label htmlFor="title" />
+                <textarea
+                  name="title"
+                  rows="2"
+                  cols="50"
+                  id="title"
+                  placeholder="Enter title here.."
+                  defaultValue={show.title}
+                />
+                <label htmlFor="question" />
+                <textarea
+                  name="question"
+                  rows="10"
+                  cols="50"
+                  id="question"
+                  placeholder="Enter question here..."
+                  defaultValue={show.question}
+                />
+                <label htmlFor="answer1" />
+                <input
+                  type="text"
+                  name="answer1"
+                  id="answer1"
+                  size="35"
+                  placeholder="Enter first answer option..."
+                  defaultValue={show.answer1}
+                />
+                <label htmlFor="answer2" />
+                <input
+                  type="text"
+                  name="answer2"
+                  id="answer2"
+                  size="35"
+                  placeholder="Enter second answer option..."
+                  defaultValue={show.answer2}
+                />
+                <button className="update" onClick={() => this.updateRandomQuestion(show.id)}>
+                  <h3>UPDATE</h3>
+                </button>
+              </form>
             </Modal.Body>
-
           </Modal>
         </div>
       )
@@ -85,7 +108,7 @@ export class Section extends React.Component {
   }
   deleteQuestion = event => {
     this.props.deleteQuestion(this.state.show)
-    event.target.reset();
+    event.target.reset()
     this.setState({ show: false })
   }
   deleteRandomQuestion = id => {
@@ -97,10 +120,10 @@ export class Section extends React.Component {
     }).catch(error => console.error('Error', error))
   }
   onDelete = event => {
-    event.preventDefault();
+    event.preventDefault()
   }
   renderDeleteButton = show => {
-    if (show.id > 25) {
+    if (show.id > 26) {
       return (
         <div onClick={this.handleClose}>
           <button className="delete" onClick={() => this.deleteRandomQuestion(show.id)}>
@@ -113,10 +136,15 @@ export class Section extends React.Component {
 
   getRandomCard = () => {
     let rindex = Math.floor(Math.random() * this.props.questionsCard.length)
-    return this.props.questionsCard[rindex -1]
+    return this.props.questionsCard[rindex - 1]
   }
+<<<<<<< HEAD
   createCard(index) {
     var randomCard = this.props.questionsCard[this.state.show -1]
+=======
+  createCard(randomCard, index) {
+    var randomCard = this.props.questionsCard[this.state.show - 1]
+>>>>>>> master
     if (!this.state.show) {
       return null
     }
