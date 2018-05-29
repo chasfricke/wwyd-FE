@@ -10,10 +10,8 @@ import { Modal, Button } from 'react-bootstrap'
 class App extends Component {
   constructor(props, context) {
     super(props, context)
-
     this.handleShow = this.handleShow.bind(this)
     this.handleClose = this.handleClose.bind(this)
-
     this.state = {
       questions: [],
       show: false

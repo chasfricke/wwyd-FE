@@ -9,7 +9,7 @@ export class Section extends React.Component {
     this.handleClose = this.handleClose.bind(this)
     this.state = {
       show: undefined,
-      updateObject: []
+      updateObject: [],
     }
   }
 
@@ -26,39 +26,48 @@ export class Section extends React.Component {
     })
   }
 
-  handleEdit = (e, editingQuestion) => {
+  handleEdit = (e, show) => {
     e.preventDefault()
     this.setState({
       editingQuestion: this.state.show
     })
   }
 
-  updateQuestion = (editingQuestion) => {
-    var editingObj = {
-      id: editingQuestion.id,
-      question: editingQuestion.question,
-      answer1: editingQuestion.answer1,
-      answer2: editingQuestion.answer2,
-      response1: 0,
-      response2: 0
-    }
+  handleChange = ({target}) => {
+    const show = this.state.show
+    show[target.name] = target.value
+    this.setState({show})
+    // this.setState({
+    //   [target.name]: target.value
+    // })
+  }
+
+  updateQuestion = (event, editingQuestion) => {
+      const editingObj= {
+        id: editingQuestion.id,
+        title: editingQuestion.title,
+        question: editingQuestion.question,
+        answer1: editingQuestion.answer1,
+        answer2: editingQuestion.answer2,
+        response1: editingQuestion.response1,
+        response2: editingQuestion.response2
+      }
+    console.log(editingObj, "UpdateQuestion");
     this.setState({
       editingQuestion: editingObj
     })
+    console.log(editingObj, "editingObj");
     this.updateRandomQuestion(editingObj)
   }
 
   updateRandomQuestion = (editingObj) => {
     return fetch('https://groupprojectbackend.herokuapp.com/questions/' + editingObj.id, {
       method: 'PUT',
+      body: JSON.stringify(editingObj),
       headers: new Headers({
         'Content-Type': 'application/json'
       })
     }).catch(error => console.error('Error', error))
-  }
-
-  onUpdate = (e) => {
-    e.preventDefault()
   }
 
   renderUpdateButton = (show) => {
@@ -80,6 +89,7 @@ export class Section extends React.Component {
                   id="title"
                   placeholder="Enter title here.."
                   defaultValue={show.title}
+                  onChange={e => this.handleChange(e)}
                 />
                 <label htmlFor="question" />
                 <textarea
@@ -89,6 +99,7 @@ export class Section extends React.Component {
                   id="question"
                   placeholder="Enter question here..."
                   defaultValue={show.question}
+                  onChange={e => this.handleChange(e)}
                 />
                 <label htmlFor="answer1" />
                 <input
@@ -98,6 +109,7 @@ export class Section extends React.Component {
                   size="35"
                   placeholder="Enter first answer option..."
                   defaultValue={show.answer1}
+                  onChange={e => this.handleChange(e)}
                 />
                 <label htmlFor="answer2" />
                 <input
@@ -107,8 +119,9 @@ export class Section extends React.Component {
                   size="35"
                   placeholder="Enter second answer option..."
                   defaultValue={show.answer2}
+                  onChange={e => this.handleChange(e)}
                 />
-                <button className="update" onClick={() => this.updateRandomQuestion(show.id)}>
+                <button className="update" onClick={event => this.updateQuestion(event)}>
                   <h3>UPDATE</h3>
                 </button>
               </form>
@@ -143,6 +156,7 @@ export class Section extends React.Component {
   likeResponse1(e, show) {
     var updateLikeObj = {
       id: show.id,
+      title: show.title,
       question: show.question,
       answer1: show.answer1,
       answer2: show.answer2,
@@ -158,6 +172,7 @@ export class Section extends React.Component {
   likeResponse2(e, show) {
     var updateLikeObj = {
       id: show.id,
+      title: show.title,
       question: show.question,
       answer1: show.answer1,
       answer2: show.answer2,
