@@ -7,8 +7,6 @@ export class Section extends React.Component {
     super(props, context)
     this.handleShow = this.handleShow.bind(this)
     this.handleClose = this.handleClose.bind(this)
-    this.deleteQuestion = this.deleteQuestion.bind(this)
-    this.updateQuestion = this.updateQuestion.bind(this)
     this.state = {
       show: undefined,
       updateObject: []
@@ -28,21 +26,30 @@ export class Section extends React.Component {
     })
   }
 
-  handleEdit = (e) => {
+  handleEdit = (e, editingQuestion) => {
     e.preventDefault()
     this.setState({
       editingQuestion: this.state.show
     })
   }
 
-  updateQuestion = (e) => {
-    this.props.updateQuestion(this.state.show)
-    e.target.reset()
-    this.setState({ show: false })
+  updateQuestion = (editingQuestion) => {
+    var editingObj = {
+      id: editingQuestion.id,
+      question: editingQuestion.question,
+      answer1: editingQuestion.answer1,
+      answer2: editingQuestion.answer2,
+      response1: 0,
+      response2: 0
+    }
+    this.setState({
+      editingQuestion: editingObj
+    })
+    this.updateRandomQuestion(editingObj)
   }
 
-  updateRandomQuestion = (id) => {
-    return fetch('https://groupprojectbackend.herokuapp.com/questions/' + id, {
+  updateRandomQuestion = (editingObj) => {
+    return fetch('https://groupprojectbackend.herokuapp.com/questions/' + editingObj.id, {
       method: 'PUT',
       headers: new Headers({
         'Content-Type': 'application/json'
@@ -112,12 +119,6 @@ export class Section extends React.Component {
     }
   }
 
-  deleteQuestion = (event) => {
-    this.props.deleteQuestion(this.state.show)
-    event.target.reset()
-    this.setState({ show: false })
-  }
-
   deleteRandomQuestion = (id) => {
     return fetch('https://groupprojectbackend.herokuapp.com/questions/' + id, {
       method: 'DELETE',
@@ -125,10 +126,6 @@ export class Section extends React.Component {
         'Content-Type': 'application/json'
       })
     }).catch(error => console.error('Error', error))
-  }
-
-  onDelete = (event) => {
-    event.preventDefault()
   }
 
   renderDeleteButton = (show) => {
@@ -155,7 +152,6 @@ export class Section extends React.Component {
     this.setState({
       updateObject: updateLikeObj
     })
-    console.log(updateLikeObj);
     this.updateLike(updateLikeObj)
   }
 
@@ -171,7 +167,6 @@ export class Section extends React.Component {
     this.setState({
       updateObject: updateLikeObj
     })
-    console.log(updateLikeObj);
     this.updateLike(updateLikeObj)
   }
 
