@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   getQuestions = () => {
-    return fetch('https://wwydbackend.herokuapp.com/questions')
+    return fetch('https://groupprojectbackend.herokuapp.com/questions')
       .then(response => response.json())
       .then(data => {
         this.setState({ questions: data.questions })
@@ -50,8 +50,8 @@ class App extends Component {
       question: data.get('question'),
       answer1: data.get('answer1'),
       answer2: data.get('answer2'),
-      response1: 1,
-      response2: 1
+      response1: 0,
+      response2: 0
     }
     this.addQuestion(question)
     this.setState({ questions })
@@ -60,7 +60,7 @@ class App extends Component {
   }
 
   addQuestion = question => {
-    fetch('https://wwydbackend.herokuapp.com/questions', {
+    fetch('https://groupprojectbackend.herokuapp.com/questions', {
       method: 'POST',
       body: JSON.stringify(question),
       headers: new Headers({

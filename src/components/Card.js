@@ -11,45 +11,50 @@ export class Section extends React.Component {
     this.updateQuestion = this.updateQuestion.bind(this)
     this.state = {
       show: undefined,
-      title: undefined,
-      question: undefined,
-      answer1: undefined,
-      answer2: undefined,
-      editingQuestion: undefined
+      updateObject: []
     }
   }
+
   handleClose = () => {
-    this.setState({ show: undefined })
+    this.setState({
+      show: undefined
+    })
   }
-  handleShow = e => {
+
+  handleShow = (e) => {
     e.preventDefault()
     this.setState({
       show: this.getRandomCard()
     })
   }
-  handleEdit = e => {
+
+  handleEdit = (e) => {
     e.preventDefault()
     this.setState({
       editingQuestion: this.state.show
     })
   }
-  updateQuestion = event => {
+
+  updateQuestion = (e) => {
     this.props.updateQuestion(this.state.show)
-    event.target.reset()
+    e.target.reset()
     this.setState({ show: false })
   }
-  updateRandomQuestion = id => {
-    return fetch('https://wwydbackend.herokuapp.com/questions/' + id, {
+
+  updateRandomQuestion = (id) => {
+    return fetch('https://groupprojectbackend.herokuapp.com/questions/' + id, {
       method: 'PUT',
       headers: new Headers({
         'Content-Type': 'application/json'
       })
     }).catch(error => console.error('Error', error))
   }
-  onUpdate = event => {
-    event.preventDefault()
+
+  onUpdate = (e) => {
+    e.preventDefault()
   }
-  renderUpdateButton = show => {
+
+  renderUpdateButton = (show) => {
     if (show.id > 25) {
       return (
         <div>
@@ -106,24 +111,28 @@ export class Section extends React.Component {
       )
     }
   }
-  deleteQuestion = event => {
+
+  deleteQuestion = (event) => {
     this.props.deleteQuestion(this.state.show)
     event.target.reset()
     this.setState({ show: false })
   }
-  deleteRandomQuestion = id => {
-    return fetch('https://wwydbackend.herokuapp.com/questions/' + id, {
+
+  deleteRandomQuestion = (id) => {
+    return fetch('https://groupprojectbackend.herokuapp.com/questions/' + id, {
       method: 'DELETE',
       headers: new Headers({
         'Content-Type': 'application/json'
       })
     }).catch(error => console.error('Error', error))
   }
-  onDelete = event => {
+
+  onDelete = (event) => {
     event.preventDefault()
   }
-  renderDeleteButton = show => {
-    if (show.id > 26) {
+
+  renderDeleteButton = (show) => {
+    if (show.id > 25) {
       return (
         <div onClick={this.handleClose}>
           <button className="delete" onClick={() => this.deleteRandomQuestion(show.id)}>
@@ -134,17 +143,56 @@ export class Section extends React.Component {
     }
   }
 
+  likeResponse1(e, show) {
+    var updateLikeObj = {
+      id: show.id,
+      question: show.question,
+      answer1: show.answer1,
+      answer2: show.answer2,
+      response1: show.response1 += 1,
+      response2: show.response2
+    }
+    this.setState({
+      updateObject: updateLikeObj
+    })
+    console.log(updateLikeObj);
+    this.updateLike(updateLikeObj)
+  }
+
+  likeResponse2(e, show) {
+    var updateLikeObj = {
+      id: show.id,
+      question: show.question,
+      answer1: show.answer1,
+      answer2: show.answer2,
+      response1: show.response1,
+      response2: show.response2 += 1,
+    }
+    this.setState({
+      updateObject: updateLikeObj
+    })
+    console.log(updateLikeObj);
+    this.updateLike(updateLikeObj)
+  }
+
+  updateLike = (updateLikeObj) => {
+    return fetch('https://groupprojectbackend.herokuapp.com/questions/' + updateLikeObj.id, {
+      method: 'PUT',
+      body: JSON.stringify(updateLikeObj),
+      headers: new Headers({
+        'Content-type': 'application/json'
+      })
+    })
+    .then(res => res.json())
+    .catch(error => console.error('Error:', error))
+  }
+
   getRandomCard = () => {
     let rindex = Math.floor(Math.random() * this.props.questionsCard.length)
     return this.props.questionsCard[rindex - 1]
   }
-<<<<<<< HEAD
+
   createCard(index) {
-    var randomCard = this.props.questionsCard[this.state.show -1]
-=======
-  createCard(randomCard, index) {
-    var randomCard = this.props.questionsCard[this.state.show - 1]
->>>>>>> master
     if (!this.state.show) {
       return null
     }
@@ -156,11 +204,13 @@ export class Section extends React.Component {
           <h3 className="questionTitle">{show.title.toUpperCase()}</h3>
           <p className="questionText">{show.question}</p>
           <div className="response-buttons">
-            <button className="answer1">
+            <button className="answer1" onClick={e => this.likeResponse1(e, show)}>
               <h3>{show.answer1}</h3>
+              <p>Votes: {show.response1}</p>
             </button>
-            <button className="answer2">
+            <button className="answer2" onClick={e => this.likeResponse2(e, show)}>
               <h3>{show.answer2}</h3>
+              <p>Votes: {show.response2}</p>
             </button>
           </div>
           <Button
@@ -197,7 +247,7 @@ export class Section extends React.Component {
           </Button>
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Body closeButton>
+          <Modal.Body>
             <section>
               <ul className="questionList">{this.createCard()}</ul>
             </section>
