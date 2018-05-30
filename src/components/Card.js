@@ -37,26 +37,21 @@ export class Section extends React.Component {
     const show = this.state.show
     show[target.name] = target.value
     this.setState({show})
-    // this.setState({
-    //   [target.name]: target.value
-    // })
   }
 
-  updateQuestion = (event, editingQuestion) => {
-      const editingObj= {
-        id: editingQuestion.id,
-        title: editingQuestion.title,
-        question: editingQuestion.question,
-        answer1: editingQuestion.answer1,
-        answer2: editingQuestion.answer2,
-        response1: editingQuestion.response1,
-        response2: editingQuestion.response2
+  updateQuestion = (event, show) => {
+    const editingObj= {
+      id: this.state.show.id,
+      title: this.state.show.title,
+      question: this.state.show.question,
+      answer1: this.state.show.answer1,
+      answer2: this.state.show.answer2,
+      response1: this.state.show.response1,
+      response2: this.state.show.response2
       }
-    console.log(editingObj, "UpdateQuestion");
     this.setState({
       editingQuestion: editingObj
     })
-    console.log(editingObj, "editingObj");
     this.updateRandomQuestion(editingObj)
   }
 
@@ -65,9 +60,12 @@ export class Section extends React.Component {
       method: 'PUT',
       body: JSON.stringify(editingObj),
       headers: new Headers({
-        'Content-Type': 'application/json'
+        'X-Content-Type-Options': 'nosniff',
+        'Content-Type': 'application/json',
       })
-    }).catch(error => console.error('Error', error))
+    })
+    .then(response => response.json())
+    .catch(error => console.error('Error', error))
   }
 
   renderUpdateButton = (show) => {
@@ -121,7 +119,7 @@ export class Section extends React.Component {
                   defaultValue={show.answer2}
                   onChange={e => this.handleChange(e)}
                 />
-                <button className="update" onClick={event => this.updateQuestion(event)}>
+                <button className="update" value="Submit" onClick={event => this.updateQuestion(event)}>
                   <h3>UPDATE</h3>
                 </button>
               </form>
