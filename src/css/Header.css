@@ -1,8 +1,8 @@
 header {
-display: flex;
-flex-direction: row;
-align-items: center;
-margin: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2rem;
 }
 
 .title-container {
@@ -20,7 +20,6 @@ margin: 2rem;
 
 .header-title {
   margin-left: 1.5rem;
-
 }
 
 .header-tagline {

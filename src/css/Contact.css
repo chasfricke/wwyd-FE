@@ -1,84 +1,83 @@
 .contact-parent {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
 }
 
 @font-face {
-    font-family: OpenSans-Regular;
-    src: url(./fonts/OpenSans-Regular.ttf);
+  font-family: OpenSans-Regular;
+  src: url(./fonts/OpenSans-Regular.ttf);
 }
 
 @font-face {
-    font-family: Raleway-Thin;
-    src: url(./fonts/Raleway-Thin.ttf);
+  font-family: Raleway-Thin;
+  src: url(./fonts/Raleway-Thin.ttf);
 }
 
 .contact-info {
-    margin: 3%;
-    background: linear-gradient(to bottom right, #627187, #303742);
-    opacity: 0.8;
-    border-radius: 25px 25px 25px 25px;
-    box-shadow: 0px 10px 10px black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  margin: 3%;
+  background: linear-gradient(to bottom right, #627187, #303742);
+  opacity: 0.8;
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0px 10px 10px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
 }
 
 .social{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .headshot {
-        border-radius: 25px 25px 0px 0px;
+  border-radius: 25px 25px 0px 0px;
 }
 
 img {
-    width: 100%;
-    height: auto;
-
+  width: 100%;
+  height: auto;
 }
+
 .name {
-    font-size: 35px;
-    text-align: center;
-    color: white;
-    font-family: Raleway-Thin;
+  font-size: 35px;
+  text-align: center;
+  color: white;
+  font-family: Raleway-Thin;
 
 }
 
 .title {
-    font-size: 25px;
-    text-align: center;
-    font-family: Raleway-Thin;
-    color:#C6C6B8;
+  font-size: 25px;
+  text-align: center;
+  font-family: Raleway-Thin;
+  color:#C6C6B8;
 }
 
 .contact-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .team-container {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(to bottom right, #627187, #303742);
-    opacity: 0.8; 
-    border-radius: 0px 0px 25px 25px;
-    padding: 1rem;  
-    box-shadow: 0px 10px 10px black;
-  
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, #627187, #303742);
+  opacity: 0.8;
+  border-radius: 0px 0px 25px 25px;
+  padding: 1rem;
+  box-shadow: 0px 10px 10px black;
 }
 
 .team-header {
-    background-color: #333333;
-    margin-top: 2rem;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 10px 10px black;
+  background-color: #333333;
+  margin-top: 2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 10px 10px black;
 }

@@ -5,7 +5,6 @@ export class SplashScreen extends React.Component {
   render () {
     return (
       <div >
-
         <div>
           <h3>OVERVIEW</h3>
           <p><i>ROOMINATE</i> is a collaborative group game designed to initiate meaningful conversation amongst adults.  Watch as even the most shy of the bunch can't help but weigh in on these wacky hypotheticals. The only question left to answer is... what would you do?</p>
