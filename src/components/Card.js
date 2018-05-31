@@ -1,6 +1,7 @@
 import React from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import '../css/Card.css'
+import { Timer } from './timer.js'
 
 export class Section extends React.Component {
   constructor(props, context) {
@@ -56,11 +57,11 @@ export class Section extends React.Component {
   }
 
   updateRandomQuestion = (editingObj) => {
+    console.log(editingObj);
     return fetch('https://groupprojectbackend.herokuapp.com/questions/' + editingObj.id, {
       method: 'PUT',
       body: JSON.stringify(editingObj),
       headers: new Headers({
-        'X-Content-Type-Options': 'nosniff',
         'Content-Type': 'application/json',
       })
     })
@@ -77,7 +78,7 @@ export class Section extends React.Component {
           </Button>
           <Modal show={this.state.editingQuestion} onHide={this.handleClose}>
             <Modal.Body>
-              <form>
+              <form onChange={e => this.handleChange(e)}>
                 <h3>EDIT QUESTION</h3>
                 <label htmlFor="title" />
                 <textarea
@@ -87,7 +88,6 @@ export class Section extends React.Component {
                   id="title"
                   placeholder="Enter title here.."
                   defaultValue={show.title}
-                  onChange={e => this.handleChange(e)}
                 />
                 <label htmlFor="question" />
                 <textarea
@@ -97,7 +97,6 @@ export class Section extends React.Component {
                   id="question"
                   placeholder="Enter question here..."
                   defaultValue={show.question}
-                  onChange={e => this.handleChange(e)}
                 />
                 <label htmlFor="answer1" />
                 <input
@@ -107,7 +106,6 @@ export class Section extends React.Component {
                   size="35"
                   placeholder="Enter first answer option..."
                   defaultValue={show.answer1}
-                  onChange={e => this.handleChange(e)}
                 />
                 <label htmlFor="answer2" />
                 <input
@@ -117,8 +115,9 @@ export class Section extends React.Component {
                   size="35"
                   placeholder="Enter second answer option..."
                   defaultValue={show.answer2}
-                  onChange={e => this.handleChange(e)}
                 />
+                <p>Votes for answer 1: {show.response1}</p>
+                <p>Votes for answer 2: {show.response2}</p>
                 <button className="update" value="Submit" onClick={event => this.updateQuestion(event)}>
                   <h3>UPDATE</h3>
                 </button>
@@ -188,7 +187,7 @@ export class Section extends React.Component {
       method: 'PUT',
       body: JSON.stringify(updateLikeObj),
       headers: new Headers({
-        'Content-type': 'application/json'
+        'Content-Type': 'application/json'
       })
     })
     .then(res => res.json())
@@ -255,6 +254,9 @@ export class Section extends React.Component {
           </Button>
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header>
+            <Timer />
+          </Modal.Header>
           <Modal.Body>
             <section>
               <ul className="questionList">{this.createCard()}</ul>
