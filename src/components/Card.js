@@ -10,7 +10,7 @@ export class Section extends React.Component {
     this.handleClose = this.handleClose.bind(this)
     this.state = {
       show: undefined,
-      updateObject: [],
+      updateObject: []
     }
   }
 
@@ -51,7 +51,7 @@ export class Section extends React.Component {
       response2: this.state.show.response2
       }
     this.setState({
-      editingQuestion: editingObj
+      show: editingObj
     })
     this.updateRandomQuestion(editingObj)
   }
@@ -118,7 +118,7 @@ export class Section extends React.Component {
                 />
                 <p>Votes for answer 1: {show.response1}</p>
                 <p>Votes for answer 2: {show.response2}</p>
-                <button className="update" value="Submit" onClick={event => this.updateQuestion(event)}>
+                <button className="update" value="Submit" onClick={event => this.updateQuestion(event, show)}>
                   <h3>UPDATE</h3>
                 </button>
               </form>
