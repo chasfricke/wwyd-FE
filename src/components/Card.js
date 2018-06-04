@@ -40,33 +40,36 @@ export class Section extends React.Component {
     this.setState({show})
   }
 
-  updateQuestion = (event, show) => {
-    const editingObj= {
-      id: this.state.show.id,
-      title: this.state.show.title,
-      question: this.state.show.question,
-      answer1: this.state.show.answer1,
-      answer2: this.state.show.answer2,
-      response1: this.state.show.response1,
-      response2: this.state.show.response2
+  updateQuestion(e, show) {
+    e.preventDefault()
+    var editingObj= {
+      id: show.id,
+      title: show.title,
+      question: show.question,
+      answer1: show.answer1,
+      answer2: show.answer2,
+      response1: show.response1,
+      response2: show.response2
       }
     this.setState({
-      show: editingObj
+      editingQuestion: editingObj
     })
     this.updateRandomQuestion(editingObj)
+    this.setState({
+      show: undefined
+    })
   }
 
   updateRandomQuestion = (editingObj) => {
-    console.log(editingObj);
     return fetch('https://groupprojectbackend.herokuapp.com/questions/' + editingObj.id, {
       method: 'PUT',
       body: JSON.stringify(editingObj),
       headers: new Headers({
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       })
     })
-    .then(response => response.json())
-    .catch(error => console.error('Error', error))
+    .then(res => res.json())
+    .catch(error => console.error('Error:', error))
   }
 
   renderUpdateButton = (show) => {
@@ -118,7 +121,7 @@ export class Section extends React.Component {
                 />
                 <p>Votes for answer 1: {show.response1}</p>
                 <p>Votes for answer 2: {show.response2}</p>
-                <button className="update" value="Submit" onClick={event => this.updateQuestion(event, show)}>
+                <button className="update" onClick={e => this.updateQuestion(e, show)}>
                   <h3>UPDATE</h3>
                 </button>
               </form>
