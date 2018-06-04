@@ -40,8 +40,7 @@ export class Section extends React.Component {
     this.setState({show})
   }
 
-  updateQuestion(e, show) {
-    e.preventDefault()
+  updateQuestion = (e, show) => {
     var editingObj= {
       id: show.id,
       title: show.title,
@@ -54,6 +53,7 @@ export class Section extends React.Component {
     this.setState({
       editingQuestion: editingObj
     })
+    e.preventDefault()
     this.updateRandomQuestion(editingObj)
     this.setState({
       show: undefined
