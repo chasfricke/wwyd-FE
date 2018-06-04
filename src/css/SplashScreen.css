@@ -1,33 +1,31 @@
 .title-div {
-    background-color: #333333;
-    margin-right: 2rem; 
-    margin-left: 2rem;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    border-radius: 25px 25px 0px 0px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 10px 10px black;
-  
+  background-color: #333333;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  border-radius: 25px 25px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 10px 10px black;
 }
 
 .instructions-container {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(to bottom right, #627187, #303742);
-    opacity: 0.8; 
-    border-radius: 0px 0px 25px 25px;
-    padding: 1rem;
-    margin-right: 2rem; 
-    margin-left: 2rem;   
-    box-shadow: 0px 10px 10px black;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, #627187, #303742);
+  opacity: 0.8;
+  border-radius: 0px 0px 25px 25px;
+  padding: 1rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  box-shadow: 0px 10px 10px black;
 }
 
 h2 {
-    align-self: center;
+  align-self: center;
 }
 
 .splash-list li {
-    list-style-type: disc !important;
+  list-style-type: disc !important;
 }
-
