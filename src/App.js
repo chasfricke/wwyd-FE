@@ -4,7 +4,6 @@ import { Header } from './components/Header'
 import { SplashScreen } from './components/SplashScreen'
 import Add from './components/AddForm'
 import { Section } from './components/Card'
-import { Contact } from './components/Contact'
 import { Modal, Button } from 'react-bootstrap'
 
 class App extends Component {
@@ -95,7 +94,6 @@ class App extends Component {
             </Modal.Body>
             </Modal>
           </div>
-          <Contact />
         </main>
       </div>
     )
